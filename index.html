@@ -462,6 +462,79 @@ body[data-mode="user"] .mut-num{display:none!important;}
 .mut-popup .mp-desc{color:var(--t1);margin-bottom:8px;}
 .mut-popup .mp-tgt{font-size:11px;color:var(--t3);padding-top:6px;border-top:1px solid var(--br);}
 .mut-popup .mp-tgt b{color:var(--t2);font-weight:600;}
+
+/* ── Z2 narrative-scan + Z3 phase-scan (semantic-zoom layers) ─────────── */
+#narrative-scan,#phase-scan{padding:60px 24px;overflow-y:auto;box-sizing:border-box;}
+.nscan-wrap{max-width:920px;margin:0 auto;display:flex;flex-direction:column;gap:24px;}
+.nscan-back{position:absolute;top:18px;left:18px;background:transparent;border:1px solid var(--br);color:var(--t2);font-size:12px;padding:6px 12px;border-radius:6px;cursor:pointer;z-index:5;}
+.nscan-back:hover{border-color:var(--br2);color:var(--t1);}
+.nscan-eye{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--t3);}
+.nscan-title{font-size:28px;font-weight:700;letter-spacing:-.4px;color:var(--t1);margin:4px 0;line-height:1.2;}
+.nscan-meta{font-size:12px;color:var(--t2);display:flex;gap:14px;flex-wrap:wrap;}
+.nscan-meta b{color:var(--t1);font-weight:600;}
+.nscan-story{font-size:14px;line-height:1.6;color:var(--t1);padding:16px 18px;background:var(--bg2);border:1px solid var(--br);border-radius:10px;}
+.nscan-story-footer{margin-top:10px;padding-top:10px;border-top:1px solid var(--br);font-size:11px;color:var(--t3);font-style:italic;}
+.nscan-section-title{font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--t3);margin-bottom:8px;}
+.nscan-actor-row{display:flex;gap:10px;align-items:baseline;flex-wrap:wrap;margin-bottom:6px;font-size:13px;}
+.nscan-actor-lbl{color:var(--t3);font-size:10.5px;text-transform:uppercase;letter-spacing:1px;min-width:54px;}
+.nscan-pill{display:inline-block;padding:2px 9px;border-radius:11px;font-size:12px;background:var(--bg2);border:1px solid var(--br);color:var(--t1);margin-right:5px;margin-bottom:4px;}
+.nscan-pill-ppl{color:#fdba74;border-color:rgba(253,186,116,.3);}
+.nscan-pill-org{color:#93c5fd;border-color:rgba(147,197,253,.3);}
+.nscan-pill-place{color:#86efac;border-color:rgba(134,239,172,.3);}
+.nscan-phase-cards{display:flex;flex-direction:column;gap:10px;}
+.nscan-phase-card{display:grid;grid-template-columns:36px 1fr auto;gap:16px;align-items:center;padding:14px 18px;background:var(--bg2);border:1px solid var(--br);border-radius:10px;cursor:pointer;transition:border-color .2s,transform .2s;}
+.nscan-phase-card:hover{border-color:var(--br2);transform:translateY(-1px);}
+.nscan-phase-num{width:36px;height:36px;border-radius:50%;background:var(--bg);border:1.5px solid var(--br2);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;color:var(--t1);}
+.nscan-phase-body{min-width:0;}
+.nscan-phase-name{font-size:13.5px;font-weight:600;color:var(--t1);margin-bottom:3px;line-height:1.35;}
+.nscan-phase-dates{font-size:10.5px;color:var(--t3);text-transform:uppercase;letter-spacing:.5px;}
+.nscan-phase-count{font-size:12px;color:var(--t2);white-space:nowrap;}
+.nscan-phase-count b{color:var(--t1);}
+.nscan-actions{margin-top:4px;display:flex;justify-content:flex-end;gap:10px;}
+.nscan-action-btn{background:transparent;border:1px solid var(--br);color:var(--t2);font-size:12px;padding:8px 16px;border-radius:6px;cursor:pointer;}
+.nscan-action-btn:hover{border-color:#f97316;color:#f97316;}
+.pscan-shift{font-size:13px;line-height:1.55;color:var(--t1);padding:12px 16px;background:rgba(125,211,252,.08);border:1px solid rgba(125,211,252,.25);border-radius:8px;}
+.pscan-shift b{color:#7dd3fc;font-size:10.5px;text-transform:uppercase;letter-spacing:1px;display:block;margin-bottom:4px;font-weight:700;}
+.pscan-hero-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px;}
+.pscan-hero-card{padding:14px;background:var(--bg2);border:1px solid var(--br);border-radius:10px;cursor:pointer;transition:border-color .2s;display:flex;flex-direction:column;gap:6px;}
+.pscan-hero-card:hover{border-color:var(--br2);}
+.pscan-hero-date{font-size:10.5px;color:var(--t3);text-transform:uppercase;letter-spacing:.5px;}
+.pscan-hero-title{font-size:13px;line-height:1.4;color:var(--t1);font-weight:500;}
+.pscan-hero-count{font-size:11px;color:var(--t2);margin-top:auto;padding-top:4px;}
+.nscan-phase-shift{font-size:12px;color:var(--t2);margin-top:6px;line-height:1.5;white-space:normal;word-break:break-word;}
+.nscan-phase-shift b{color:var(--t1);font-weight:600;}
+.nscan-phase-tail-tag{display:inline-block;font-size:10px;font-weight:700;color:var(--t3);text-transform:uppercase;letter-spacing:1px;background:rgba(255,255,255,0.05);padding:2px 7px;border-radius:8px;margin-top:6px;}
+.pscan-context{display:flex;flex-direction:column;gap:10px;padding:14px 16px;background:var(--bg2);border:1px solid var(--br);border-radius:8px;}
+.pscan-context-row{display:flex;flex-direction:column;gap:3px;font-size:13px;color:var(--t1);}
+.pscan-context-label{font-size:10.5px;color:var(--t3);text-transform:uppercase;letter-spacing:1px;font-weight:600;}
+.pscan-context-text{line-height:1.45;}
+.pscan-context-text .ctxdate{color:var(--t3);font-size:11px;display:block;margin-top:3px;letter-spacing:.3px;}
+.pscan-context-text{word-break:break-word;}
+
+/* ── Phase nav arrows — appear on Z3 (phase-scan) and Z4 (phase-scoped */
+/* detail). One fixed-position pair; show/hide driven from JS. */
+.phase-nav-arrow{
+  position:fixed;top:50%;transform:translateY(-50%);
+  width:48px;height:48px;border-radius:50%;
+  background:var(--bg2);border:1.5px solid var(--br);
+  display:none;align-items:center;justify-content:center;
+  cursor:pointer;color:var(--t2);font-size:24px;line-height:1;
+  z-index:60;transition:transform .2s,border-color .2s,color .2s,background .2s;
+  user-select:none;
+}
+.phase-nav-arrow:hover{
+  border-color:#f97316;color:#f97316;background:var(--bg);
+}
+.phase-nav-arrow.show{display:flex;}
+.phase-nav-arrow.left{left:18px;}
+.phase-nav-arrow.right{right:18px;}
+.phase-nav-arrow .pna-label{
+  position:absolute;font-size:10px;color:var(--t3);font-weight:600;
+  text-transform:uppercase;letter-spacing:1px;white-space:nowrap;
+  top:54px;left:50%;transform:translateX(-50%);
+  opacity:0;transition:opacity .2s;pointer-events:none;
+}
+.phase-nav-arrow:hover .pna-label{opacity:1;color:#f97316;}
 </style>
 <!-- Each narratives.js file sets `var NARRATIVES = [...]`. We load them in
      sequence and capture into namespaced globals so the user can switch
@@ -506,6 +579,50 @@ body[data-mode="user"] .mut-num{display:none!important;}
   <div class="ov-sub">Click a narrative to explore</div>
   <div class="ov-context" id="ov-context"></div>
   <div class="brow" id="brow"></div>
+</div>
+<div id="narrative-scan" class="screen hidden out">
+  <div class="nscan-wrap">
+    <button class="nscan-back" onclick="goBack()">← Theme</button>
+    <div>
+      <div class="nscan-eye" id="nscan-eye"></div>
+      <h1 class="nscan-title" id="nscan-title"></h1>
+      <div class="nscan-meta" id="nscan-meta"></div>
+    </div>
+    <div class="nscan-story" id="nscan-story"></div>
+    <div>
+      <div class="nscan-section-title">Key actors</div>
+      <div id="nscan-actors"></div>
+    </div>
+    <div>
+      <div class="nscan-section-title">How this narrative unfolded</div>
+      <div class="nscan-phase-cards" id="nscan-phases"></div>
+    </div>
+    <div class="nscan-actions">
+      <button class="nscan-action-btn" onclick="if(curN)enterDetail(curN.id)">See full piece grid →</button>
+    </div>
+  </div>
+</div>
+<div id="phase-scan" class="screen hidden out">
+  <div class="nscan-wrap">
+    <button class="nscan-back" onclick="goBack()">← Narrative scan</button>
+    <div>
+      <div class="nscan-eye" id="pscan-eye"></div>
+      <h1 class="nscan-title" id="pscan-title"></h1>
+      <div class="nscan-meta" id="pscan-meta"></div>
+    </div>
+    <div class="pscan-shift" id="pscan-shift"></div>
+    <div>
+      <div class="nscan-section-title">What happened in this phase</div>
+      <div class="pscan-context" id="pscan-context"></div>
+    </div>
+    <div>
+      <div class="nscan-section-title">Most discussed pieces in this phase</div>
+      <div class="pscan-hero-grid" id="pscan-hero"></div>
+    </div>
+    <div class="nscan-actions">
+      <button class="nscan-action-btn" onclick="enterPhaseDetail()">See all pieces in phase →</button>
+    </div>
+  </div>
 </div>
 <div id="detail" class="screen hidden in">
   <div class="dhead">
@@ -563,6 +680,14 @@ body[data-mode="user"] .mut-num{display:none!important;}
 </div>
 <div id="mut-popup" class="mut-popup" style="display:none"></div>
 
+<!-- Phase nav arrows — hidden by default, shown on Z3 / Z4 only -->
+<div id="phase-nav-left" class="phase-nav-arrow left" onclick="goPhaseRel(-1)">
+  <span>‹</span><span class="pna-label" id="pna-label-left"></span>
+</div>
+<div id="phase-nav-right" class="phase-nav-arrow right" onclick="goPhaseRel(1)">
+  <span>›</span><span class="pna-label" id="pna-label-right"></span>
+</div>
+
 <!-- Onboarding tour overlay + always-visible Help button -->
 <button class="help-btn" id="help-btn" onclick="startTour()" title="Show the tour again">?</button>
 <div id="tour-overlay" class="tour-overlay" style="display:none;">
@@ -608,53 +733,63 @@ try {
 // and does NOT block clicks on the underlying UI, so the user can interact
 // with the prototype while reading the prompts. Optional: triggered on first
 // visit but immediately skippable; re-triggerable via the ? button bottom-right.
+// Tour walks the user through the four zoom levels using Hungary as the
+// example. Vocabulary stays in the product's own words (topic → storyline
+// → phase → piece) — no academic jargon. Each step either has `action`
+// (runs on Next click, typically a navigation) or `entryAction` (runs as
+// the step is shown, for "the panel is already open, here's what's in it"
+// steps). Moments of change appear in the FULL piece grid only (not the
+// phase-scoped view) because the change-points are the phase boundaries
+// themselves; the tour walks the user to the full grid at the end to
+// surface them.
 var TOUR_STEPS = [
   {
     title: 'Welcome',
-    body: 'Hi! This is the <b>Narrative Tracker</b>. The short tour below shows you what it does, using a real example. If you want to follow along, <b>just keep clicking Next</b> — the guide will drive. If you\'d rather poke around on your own, click <b>Skip tour</b>. Once the tour ends you can move around freely.',
+    body: 'Hi! This is the <b>Narrative Tracker</b>. It groups Reddit conversations about a big event into separate <b>storylines</b> so you can read what people were actually talking about. <br><br>This short tour walks you through the layout using a real example — <b>just keep clicking Next</b>. Want to explore on your own? Click <b>Skip tour</b>. The <b>?</b> button in the bottom-right brings this back any time.',
   },
   {
-    title: 'Topics',
-    body: 'These tiles are <b>topics</b>. A topic is one big event the system has looked at — an election, a war, a wave of protests. Each topic contains the stories the system found inside its discussion. Let\'s open one.',
+    title: '1 — Pick a topic',
+    body: 'These tiles are <b>topics</b> — one big event each. An election, a war, a wave of protests. Inside each topic there are several <b>storylines</b> the system has discovered. Let\'s open Hungary 2026.',
     nextLabel: 'Open Hungary 2026 →',
     action: function(){ try { selectTopic('hu'); } catch(e) {} },
   },
   {
-    title: 'Narratives inside Hungary',
-    body: 'You\'re now <b>inside the Hungary topic</b>. The bubbles you see are the <b>narratives</b> the system found inside it. Each narrative is one storyline within the topic, made of lots of connected Reddit threads. Hungary has three of them: an election shift, an Orbán fallout, and a Hungary–Russia angle. Let\'s open the first one.',
-    nextLabel: 'Open the first narrative →',
+    title: '2 — Pick a storyline',
+    body: 'You\'re inside Hungary now. Each bubble is one <b>storyline</b> — one distinct narrative inside the topic. Hungary has three: an election shift, the fallout after Orbán\'s defeat, and a Hungary–Russia angle. Let\'s open the first one.',
+    nextLabel: 'Open the first storyline →',
     action: function(){
       try {
-        if (typeof NARRATIVES !== 'undefined' && NARRATIVES.length) enterDetail(NARRATIVES[0].id);
+        if (typeof NARRATIVES !== 'undefined' && NARRATIVES.length) enterNarrativeScan(NARRATIVES[0].id);
       } catch(e) {}
     },
   },
   {
-    title: 'The narrative timeline',
-    body: 'You\'re inside a narrative now. The timeline runs <b>left to right</b> — earlier on the left, later on the right — so you can read the story develop as you scroll across. Each card is a <b>piece</b>: a small cluster of Reddit threads about one specific moment (a statement, a rally, an incident). <b>Cards stacked on top of each other are close in time</b> — they share roughly the same date.',
+    title: '3 — The storyline at a glance',
+    body: 'This is the <b>summary view</b>. At the top: a short story telling you what this storyline is about. Below that: the <b>key people, organisations and places</b> involved (the system pulled these from the actual Reddit threads). <br><br>Further down you\'ll see the <b>phases</b> the story moved through — chapters in the narrative, automatically detected at moments where the discussion changed direction.',
   },
   {
-    title: 'Moments of change',
-    body: 'The <b>sky-blue chips</b> along the top of the timeline are <b>moments of change</b> — dates where the system noticed the story\'s framing shifted. We\'ll open one in a moment; first let\'s look at the Context panel.',
+    title: '4 — Each storyline is broken into phases',
+    body: 'A <b>phase</b> is one chapter of the story. The system spotted moments where the conversation took a turn (a result, an event, a reveal) and split the timeline into phases at those moments. Each phase card shows what kicked off and what shifted at the end. Let\'s open Phase 1.',
+    nextLabel: 'Open Phase 1 →',
+    action: function(){ try { enterPhaseScan(0); } catch(e) {} },
   },
   {
-    title: 'The Context panel',
-    body: 'Top of the timeline, there\'s a pulsing <b>📚 Context</b> button. It opens a deeper view of this narrative. Let\'s open it.',
-    nextLabel: 'Open Context →',
-    action: function(){ try { openCtxPanel(); } catch(e) {} },
+    title: '5 — Inside a phase',
+    body: 'You\'re inside <b>Phase 1</b>. At the top: what shifted at the end of this phase. In the middle: how the phase opened and closed and how big it is. Below: the <b>most-discussed pieces</b> in this phase — each piece is a small cluster of Reddit threads about one specific moment. <br><br>From here you have <b>two ways to dive deeper</b>: click any of the <b>most-discussed piece cards</b> to jump straight into that piece, or click <b>"See all pieces in phase →"</b> at the bottom to see every piece on a timeline first. <br><br>You can also <b>jump between phases</b> with the side arrows or the <b>← →</b> keys.',
   },
   {
-    title: 'What Context shows you',
-    body: 'Inside the Context panel: the narrative\'s key <b>people, organisations and places</b> (auto-extracted from the threads), which <b>subreddits</b> drove the discussion the most, and the system\'s <b>quality signals</b> about how coherent the narrative is. This is the deeper read on the narrative.',
-    nextLabel: 'Close Context →',
-    action: function(){ try { closeCtxPanel(); } catch(e) {} },
+    title: '6 — See every piece in this phase',
+    body: 'To see <b>every piece</b> in this phase, not just the most discussed ones, click <b>See all pieces in phase →</b>. That opens the full timeline view for this phase.',
+    nextLabel: 'Open the timeline →',
+    action: function(){ try { enterPhaseDetail(); } catch(e) {} },
   },
   {
-    title: 'Inside a piece',
-    body: 'I just opened a piece for you (panel on the right). The side panel shows the piece\'s <b>headline and main claim</b>, and three stats: <b>Total pts</b> (how much engagement it got on Reddit), <b>Threads</b> (how many Reddit posts make up this cluster), and the <b>Connection</b> type (amplifier, tangential, or discussion-driven). Below the stats, each Reddit thread is listed with its top comment — and the title and comment links open the original posts on reddit.com.',
-    // Run on ENTRY so the panel is already open when the user reads the
-    // description. Previously this opened on Next click, which meant the
-    // explanation was visible only before the panel appeared.
+    title: '7 — The phase timeline',
+    body: 'Every piece in this phase, plotted <b>left to right by date</b>. Earlier on the left, later on the right. Cards stacked above each other are around the same date. <br><br>The <b>side arrows still work</b> on this screen too — use them (or the ← → keys) to jump to the previous or next phase\'s timeline without going back up first.',
+  },
+  {
+    title: '8 — Inside a piece',
+    body: 'I\'ve opened a piece for you (panel on the right). Each piece shows its <b>headline and main claim</b>, plus three stats: <b>Total pts</b> (engagement), <b>Threads</b> (how many Reddit posts make up the piece), and the <b>Connection</b> type. <br><br>Below the stats, each Reddit thread is listed with its top comment. <b>Click any thread title or comment</b> to open the original post on reddit.com.',
     entryAction: function(){
       try {
         if (typeof curN !== 'undefined' && curN && curN.pieces && curN.pieces.length) {
@@ -664,8 +799,37 @@ var TOUR_STEPS = [
     },
   },
   {
-    title: 'A moment of change',
-    body: 'And here\'s a <b>moment of change</b> popup — opened from the first sky-blue chip on the timeline. It shows the date plus an <b>LLM-written explanation</b> of what shifted in the story around that day. The piece side panel is closed now so you can see the popup clearly.',
+    title: '9 — Back to the storyline summary',
+    body: 'I\'ve zoomed back out to the <b>storyline summary</b> you started from. Look at the bottom of this page — there\'s a <b>"See full piece grid →"</b> button. That opens a view of the <b>whole storyline at once</b>: every piece from every phase laid out together, with the moments of change shown on top. <br><br>Click Next and I\'ll open it for you.',
+    nextLabel: 'Open the full grid →',
+    entryAction: function(){
+      try {
+        if (typeof closePanel === 'function') closePanel();
+        if (typeof closeMutationPopup === 'function') closeMutationPopup();
+        // Reset phase index so goBack lands on narrative-scan (not phase-scan).
+        if (typeof curPhaseIdx !== 'undefined') curPhaseIdx = null;
+        if (typeof goBack === 'function') goBack();
+      } catch(e) { console.warn('tour: back to summary failed:', e); }
+    },
+    action: function(){
+      try {
+        if (typeof curN !== 'undefined' && curN) enterDetail(curN.id);
+      } catch(e) { console.warn('tour: open full grid failed:', e); }
+    },
+  },
+  {
+    title: '10 — The full piece grid',
+    body: 'Here\'s the <b>whole storyline at once</b> — every piece across every phase, laid out left-to-right by date. <br><br>The <b>sky-blue chips</b> along the top of the timeline are the <b>moments of change</b> the system found. These are exactly what the phases were drawn around: each chip marks the end of one phase and the start of the next.',
+    entryAction: function(){
+      try {
+        if (typeof closePanel === 'function') closePanel();
+        if (typeof closeMutationPopup === 'function') closeMutationPopup();
+      } catch(e) {}
+    },
+  },
+  {
+    title: '11 — A moment of change',
+    body: 'Click any sky-blue chip to see this popup — the date plus an <b>AI-written explanation</b> of what shifted around then. <br><br>Each moment of change marks one phase ending and the next starting, which is why you only see these chips on the full storyline view, not inside a single phase.',
     entryAction: function(){
       try {
         if (typeof closePanel === 'function') closePanel();
@@ -692,9 +856,8 @@ var TOUR_STEPS = [
     },
   },
   {
-    title: 'You\'re all set',
-    body: 'That\'s the full flow: pick a topic → pick a narrative → read its pieces, its moments of change, and its context. The top-right toggles let you switch between <b>User / Dev</b> views and between the <b>Refined / Baseline</b> data. The <b>?</b> button (bottom-right) brings this tour back any time. You\'re free to explore now!',
-    // Defensive: close any open popups/panels so the wrap-up isn't cluttered.
+    title: 'You\'re ready',
+    body: 'That\'s the layout: <b>Topic → Storyline → Phase → Piece</b>, with a "see everything at once" option on the storyline view. Use the <b>← Back button</b> at the top-left of each screen to step back up a level, or the <b>arrow keys</b> to jump between phases. The <b>?</b> button (bottom-right) brings this tour back any time. <br><br>Have a look around!',
     entryAction: function(){
       try { if (typeof closeMutationPopup === 'function') closeMutationPopup(); } catch(e) {}
       try { if (typeof closePanel === 'function') closePanel(); } catch(e) {}
@@ -707,16 +870,38 @@ var tourIdx = 0;
 // from a known state — otherwise re-triggering the tour from the detail view
 // would break the action chain.
 function _tourResetToTopics() {
+  // Tour relaunches from the topic-selector so the scripted sequence
+  // runs from a known state. Hide every layer between topics and the
+  // user's current screen and clean up auxiliary UI from the detail view.
   try {
+    var hideIfVisible = function(id, addCls){
+      var el = document.getElementById(id);
+      if (el && !el.classList.contains('hidden')) {
+        el.classList.add('hidden', addCls);
+      }
+    };
     var detail = document.getElementById('detail');
     if (detail && !detail.classList.contains('hidden')) {
-      if (typeof goBack === 'function') goBack();
+      ['legend','zctl','filter-bar','intel-btn'].forEach(function(id){
+        var el = document.getElementById(id);
+        if (el) el.style.display = 'none';
+      });
+      try { closeCtxPanel(); } catch(e) {}
+      try { setZoom(1); } catch(e) {}
+      try { closePanel(); } catch(e) {}
+      try { if (typeof closeMutationPopup === 'function') closeMutationPopup(); } catch(e) {}
     }
-    var overview = document.getElementById('overview');
-    if (overview && !overview.classList.contains('hidden')) {
-      if (typeof backToTopics === 'function') backToTopics();
-    }
-  } catch(e) {}
+    hideIfVisible('detail', 'in');
+    hideIfVisible('phase-scan', 'out');
+    hideIfVisible('narrative-scan', 'out');
+    hideIfVisible('overview', 'out');
+    var topics = document.getElementById('topics');
+    if (topics) topics.classList.remove('hidden', 'out');
+    curN = null;
+    if (typeof curPhaseIdx !== 'undefined') curPhaseIdx = null;
+    if (typeof currentTopicId !== 'undefined') currentTopicId = null;
+    if (typeof updatePhaseNavArrows === 'function') updatePhaseNavArrows();
+  } catch(e) { console.warn('tour reset failed:', e); }
 }
 function startTour() {
   try {
@@ -1368,7 +1553,7 @@ function renderOverview(){
     });
     const srcDiversity=_subs.size;
 
-    const w=document.createElement('div');w.className='bwrap';w.onclick=()=>enterDetail(n.id);
+    const w=document.createElement('div');w.className='bwrap';w.onclick=()=>enterNarrativeScan(n.id);
     const circ=document.createElement('div');circ.className=`bcirc ${n.traction}`;
     const S=156,R=74,Ri=61,C=S/2,cl=2*Math.PI*R,cli=2*Math.PI*Ri,ac=n.traction==='hot'?'#ef4444':'#0891b2';
     const dashOuter=(coherencePct/100)*cl;
@@ -2248,6 +2433,482 @@ function openClusterPanel(p,n){
     </div>
   </div>`);
 }
+
+// ══════════════════════════════════════════════════════════
+// SEMANTIC-ZOOM LAYERS  (Z2 narrative-scan + Z3 phase-scan)
+// ══════════════════════════════════════════════════════════
+// Goal: insert two layers between the theme overview and the dense piece grid.
+//   Z2 (narrative-scan) — hero summary, key actors, phase list
+//   Z3 (phase-scan)     — phase summary + hero pieces (top by thread count)
+//   Z4 = existing #detail screen, optionally scoped to one phase
+// Phase bucketing is derived from the narrative's changepoints — each
+// change-point's `before_piece_id` marks the boundary between two phases.
+
+// Bucket a narrative's pieces by changepoints. With N changepoints → N+1 phases.
+function bucketPhases(n){
+  const pieces = (n.pieces || []).slice();
+  if (!pieces.length) return [];
+  const cps = (n.changepoints || []).slice();
+  if (!cps.length) {
+    return [{
+      idx: 0, label: 'Single phase',
+      startDate: pieces[0].date,
+      endDate: pieces[pieces.length-1].date,
+      pieces: pieces, shiftExplanation: null
+    }];
+  }
+  // Map each changepoint to an index in the piece array via before_piece_id.
+  const boundaries = [];
+  cps.forEach(cp => {
+    const idx = pieces.findIndex(p => p.id === cp.before_piece_id);
+    if (idx >= 0) boundaries.push({ idx, cp });
+  });
+  if (!boundaries.length) {
+    return [{
+      idx: 0, label: 'Single phase',
+      startDate: pieces[0].date, endDate: pieces[pieces.length-1].date,
+      pieces: pieces, shiftExplanation: null
+    }];
+  }
+  boundaries.sort((a,b) => a.idx - b.idx);
+  const phases = [];
+  let startIdx = 0;
+  boundaries.forEach((b, i) => {
+    phases.push({
+      idx: i,
+      label: `Phase ${i+1}`,
+      startDate: pieces[startIdx].date,
+      endDate: pieces[b.idx].date,
+      pieces: pieces.slice(startIdx, b.idx + 1),
+      shiftExplanation: b.cp.explanation,
+      shiftDate: b.cp.date
+    });
+    startIdx = b.idx + 1;
+  });
+  if (startIdx < pieces.length) {
+    phases.push({
+      idx: phases.length,
+      label: `Phase ${phases.length + 1}`,
+      startDate: pieces[startIdx].date,
+      endDate: pieces[pieces.length-1].date,
+      pieces: pieces.slice(startIdx),
+      shiftExplanation: null
+    });
+  }
+  return phases;
+}
+
+function getHeroPieces(phase, k){
+  return phase.pieces.slice()
+    .sort((a,b) => ((b.threads||[]).length - (a.threads||[]).length) ||
+                   ((b.reach||0) - (a.reach||0)))
+    .slice(0, k || 6);
+}
+
+// piece.title is truncated by the pipeline (ends with …). The first thread's
+// title is the original full Reddit title — prefer it.
+function _fullPieceTitle(p){
+  if (!p) return '';
+  const threads = p.threads || [];
+  const t = (threads[0] && threads[0].title) || '';
+  return t || (p.title || '');
+}
+
+function _fmtPhaseDate(iso){
+  if (!iso) return '';
+  try {
+    const d = new Date(iso);
+    if (isNaN(d.getTime())) return (iso || '').slice(0,10);
+    return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+  } catch(e) { return (iso || '').slice(0,10); }
+}
+
+function _escapeText(s){
+  return String(s || '').replace(/[&<>"]/g, ch =>
+    ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'})[ch]);
+}
+
+let curPhaseIdx = null;
+
+function enterNarrativeScan(id){
+  curN = NARRATIVES.find(n => n.id === id);
+  if (!curN) return;
+  curPhaseIdx = null;
+  renderNarrativeScan(curN);
+  document.getElementById('overview').classList.add('hidden','out');
+  document.getElementById('narrative-scan').classList.remove('hidden','out');
+}
+
+function renderNarrativeScan(n){
+  const topic = (typeof TOPICS !== 'undefined' && currentTopicId) ? TOPICS[currentTopicId] : null;
+  document.getElementById('nscan-eye').textContent =
+    `${(topic && topic.eyeLabel) ? topic.eyeLabel : 'Theme'} · Narrative`;
+  document.getElementById('nscan-title').textContent = n.label;
+
+  const n_pieces = (n.pieces||[]).length;
+  const n_threads = (n.pieces||[]).reduce((s,p)=>s+((p.threads||[]).length),0);
+  document.getElementById('nscan-meta').innerHTML =
+    `<span><b>${_fmtPhaseDate(n.dateStart+'T00:00:00')} – ${_fmtPhaseDate(n.dateEnd+'T00:00:00')} 2026</b></span>` +
+    `<span><b>${n_pieces}</b> pieces</span>` +
+    `<span><b>${n_threads}</b> threads</span>` +
+    (n.coherencePct != null ? `<span>coherence <b>${n.coherencePct}%</b></span>` : '');
+
+  const phases = bucketPhases(n);
+  // Prefer the LLM-generated 3-sentence story arc (populated by
+  // narrative_tracker_v2/add_narrative_stories.py); fall back to the
+  // single-sentence description from the pipeline if story isn't present.
+  const story = (n.story || n.description || n.desc || '').trim() || 'No narrative summary available.';
+  document.getElementById('nscan-story').innerHTML =
+    `<div>${_escapeText(story)}</div>` +
+    `<div class="nscan-story-footer">Summary of ${n_pieces} sub-event${n_pieces===1?'':'s'} across ${phases.length} phase${phases.length===1?'':'s'}. Click a phase below to dive in.</div>`;
+
+  const ent = n.entities || {};
+  const actorsEl = document.getElementById('nscan-actors');
+  actorsEl.innerHTML = '';
+  function renderActorRow(label, list, cls){
+    if (!list || !list.length) return;
+    const row = document.createElement('div');
+    row.className = 'nscan-actor-row';
+    const lbl = document.createElement('span');
+    lbl.className = 'nscan-actor-lbl';
+    lbl.textContent = label;
+    row.appendChild(lbl);
+    const pills = document.createElement('span');
+    list.slice(0, 6).forEach(e => {
+      const txt = (e && e.text) ? e.text : (typeof e === 'string' ? e : '');
+      if (!txt) return;
+      const p = document.createElement('span');
+      p.className = 'nscan-pill ' + cls;
+      p.textContent = txt;
+      pills.appendChild(p);
+    });
+    row.appendChild(pills);
+    actorsEl.appendChild(row);
+  }
+  renderActorRow('People',  ent.persons, 'nscan-pill-ppl');
+  renderActorRow('Orgs',    ent.orgs,    'nscan-pill-org');
+  renderActorRow('Places',  ent.places,  'nscan-pill-place');
+
+  const phasesEl = document.getElementById('nscan-phases');
+  phasesEl.innerHTML = '';
+  phases.forEach((ph, i) => {
+    const card = document.createElement('div');
+    card.className = 'nscan-phase-card';
+    card.onclick = () => enterPhaseScan(i);
+    // Phase name is just "Phase N"; the shift content goes in a separate
+    // sub-line so it can wrap freely without being truncated.
+    let shiftLine = '';
+    if (ph.shiftExplanation) {
+      const explanation = ph.shiftExplanation
+        .replace(/^The shift on \d{4}-\d{2}-\d{2} involved /,'')
+        .replace(/^The shift on \d{4}-\d{2}-\d{2}\s+/,'')
+        .trim();
+      shiftLine = `<div class="nscan-phase-shift"><b>Ends with shift:</b> ${_escapeText(explanation)}</div>`;
+    } else if (i === phases.length - 1 && phases.length > 1) {
+      shiftLine = `<div class="nscan-phase-tail-tag">Final phase — no further shift</div>`;
+    }
+    card.innerHTML =
+      `<div class="nscan-phase-num">${i+1}</div>` +
+      `<div class="nscan-phase-body">` +
+        `<div class="nscan-phase-name">Phase ${i+1}</div>` +
+        `<div class="nscan-phase-dates">${_fmtPhaseDate(ph.startDate)} – ${_fmtPhaseDate(ph.endDate)}</div>` +
+        shiftLine +
+      `</div>` +
+      `<div class="nscan-phase-count"><b>${ph.pieces.length}</b> piece${ph.pieces.length===1?'':'s'}</div>`;
+    phasesEl.appendChild(card);
+  });
+}
+
+function enterPhaseScan(phaseIdx){
+  if (!curN) return;
+  const phases = bucketPhases(curN);
+  if (!phases[phaseIdx]) return;
+  curPhaseIdx = phaseIdx;
+  renderPhaseScan(curN, phases[phaseIdx], phases.length);
+  document.getElementById('narrative-scan').classList.add('hidden','out');
+  document.getElementById('phase-scan').classList.remove('hidden','out');
+}
+
+function renderPhaseScan(n, phase, totalPhases){
+  document.getElementById('pscan-eye').textContent =
+    `${n.label} · Phase ${phase.idx + 1} of ${totalPhases}`;
+  document.getElementById('pscan-title').textContent = `Phase ${phase.idx + 1}`;
+  document.getElementById('pscan-meta').innerHTML =
+    `<span><b>${_fmtPhaseDate(phase.startDate)} – ${_fmtPhaseDate(phase.endDate)}</b></span>` +
+    `<span><b>${phase.pieces.length}</b> pieces</span>`;
+
+  const shiftEl = document.getElementById('pscan-shift');
+  if (phase.shiftExplanation) {
+    shiftEl.innerHTML = `<b>What changed at the end of this phase</b>${_escapeText(phase.shiftExplanation)}`;
+    shiftEl.style.display = '';
+  } else {
+    shiftEl.style.display = 'none';
+  }
+
+  // Phase context: first piece, last piece, and an approximate "topic span"
+  // synthesised from titles. No LLM call — pure pipeline-data.
+  const ctxEl = document.getElementById('pscan-context');
+  const firstP = phase.pieces[0];
+  const lastP  = phase.pieces[phase.pieces.length - 1];
+  const phaseDays = (function(){
+    try {
+      const a = new Date(phase.startDate), b = new Date(phase.endDate);
+      const d = Math.round((b - a) / 86400000) + 1;
+      return d > 0 ? `${d} day${d===1?'':'s'}` : '';
+    } catch(e){ return ''; }
+  })();
+  let ctxHtml = '';
+  if (firstP) ctxHtml +=
+    `<div class="pscan-context-row">` +
+      `<div class="pscan-context-label">Opened with</div>` +
+      `<div class="pscan-context-text">${_escapeText(_fullPieceTitle(firstP))}<span class="ctxdate">${_fmtPhaseDate(firstP.date)}</span></div>` +
+    `</div>`;
+  if (lastP && lastP !== firstP) ctxHtml +=
+    `<div class="pscan-context-row">` +
+      `<div class="pscan-context-label">Closed with</div>` +
+      `<div class="pscan-context-text">${_escapeText(_fullPieceTitle(lastP))}<span class="ctxdate">${_fmtPhaseDate(lastP.date)}</span></div>` +
+    `</div>`;
+  ctxHtml +=
+    `<div class="pscan-context-row">` +
+      `<div class="pscan-context-label">Volume</div>` +
+      `<div class="pscan-context-text">${phase.pieces.length} sub-event${phase.pieces.length===1?'':'s'} spanning ${phaseDays}</div>` +
+    `</div>`;
+  ctxEl.innerHTML = ctxHtml;
+
+  // Hero piece cards. Click opens the full piece-panel — uses the existing
+  // openClusterPanel function which expects (piece, narrative). Calling
+  // openPanel directly with a piece object stringifies it as [object Object].
+  const heroEl = document.getElementById('pscan-hero');
+  heroEl.innerHTML = '';
+  getHeroPieces(phase, 6).forEach(p => {
+    const card = document.createElement('div');
+    card.className = 'pscan-hero-card';
+    card.onclick = () => {
+      enterPhaseDetail();
+      setTimeout(() => {
+        try {
+          if (typeof openClusterPanel === 'function') openClusterPanel(p, curN);
+        } catch(e){ console.warn('hero piece open failed:', e); }
+      }, 80);
+    };
+    const tcount = (p.threads || []).length;
+    card.innerHTML =
+      `<div class="pscan-hero-date">${_fmtPhaseDate(p.date)}</div>` +
+      `<div class="pscan-hero-title">${_escapeText(_fullPieceTitle(p))}</div>` +
+      `<div class="pscan-hero-count">${tcount} thread${tcount===1?'':'s'}${p.count?' · '+_escapeText(p.count):''}</div>`;
+    heroEl.appendChild(card);
+  });
+}
+
+function enterPhaseDetail(){
+  if (!curN || curPhaseIdx == null) return;
+  const phases = bucketPhases(curN);
+  const phase = phases[curPhaseIdx];
+  if (!phase) return;
+  // Clone the narrative scoped to phase pieces. curN stays the original — we
+  // pass the clone to renderDetail so the existing renderer doesn't know it's
+  // a phase view.
+  const phaseN = Object.assign({}, curN, {
+    pieces: phase.pieces,
+    dateStart: (phase.startDate || '').slice(0,10),
+    dateEnd:   (phase.endDate   || '').slice(0,10),
+    label: `${curN.label} · Phase ${phase.idx + 1} of ${phases.length}`,
+    changepoints: []  // a phase doesn't contain internal changepoints
+  });
+  document.getElementById('dtitle').textContent = phaseN.label;
+  document.getElementById('drange').textContent =
+    `${fmtDate(phaseN.dateStart)} – ${fmtDate(phaseN.dateEnd)} 2026 · Phase view`;
+  const b = document.getElementById('dbadge');
+  b.className = `bbadge ${phaseN.traction}`;
+  b.textContent = phaseN.traction === 'hot' ? 'High Debate' : 'Rising';
+  document.getElementById('zctl').style.display = 'flex';
+  document.getElementById('filter-bar').style.display = 'flex';
+  document.getElementById('intel-btn').style.display = 'inline-flex';
+  curFilter = 'all';
+  document.querySelectorAll('.ftog').forEach(b => {
+    b.classList.remove('fa','fs','fc','fx');
+    if (b.dataset.f === 'all') b.classList.add('fa');
+  });
+  renderDetail(phaseN);
+  document.getElementById('phase-scan').classList.add('hidden','out');
+  document.getElementById('detail').classList.remove('hidden','in');
+  document.getElementById('legend').style.display = 'flex';
+}
+
+// Smart goBack that knows which screen is visible and routes one level up.
+// Replaces the original goBack-from-detail behaviour to step through the
+// semantic-zoom chain instead of always returning to the overview.
+(function(){
+  window.goBack = function(){
+    const detail = document.getElementById('detail');
+    const phaseScan = document.getElementById('phase-scan');
+    const narrativeScan = document.getElementById('narrative-scan');
+    const overview = document.getElementById('overview');
+
+    if (detail && !detail.classList.contains('hidden')) {
+      detail.classList.add('hidden','in');
+      document.getElementById('legend').style.display = 'none';
+      document.getElementById('zctl').style.display = 'none';
+      document.getElementById('filter-bar').style.display = 'none';
+      document.getElementById('intel-btn').style.display = 'none';
+      try { closeCtxPanel(); } catch(e){}
+      try { setZoom(1); } catch(e){}
+      try { closePanel(); } catch(e){}
+      if (curPhaseIdx != null && phaseScan && curN) {
+        // Re-render the phase-scan for the CURRENT phase before showing.
+        // Otherwise if the user traversed phases via arrows in the detail
+        // view, the phase-scan still shows whichever phase they last opened
+        // it from, while curPhaseIdx points to the new one — a mismatch
+        // that produces wrong arrow targets and stale hero pieces.
+        try {
+          const phases = bucketPhases(curN);
+          const phase = phases[curPhaseIdx];
+          if (phase) renderPhaseScan(curN, phase, phases.length);
+        } catch(e) { console.warn('phase-scan re-render failed:', e); }
+        phaseScan.classList.remove('hidden','out');
+      } else if (narrativeScan && curN) {
+        narrativeScan.classList.remove('hidden','out');
+      } else {
+        overview.classList.remove('hidden','out');
+        curN = null;
+      }
+      return;
+    }
+    if (phaseScan && !phaseScan.classList.contains('hidden')) {
+      phaseScan.classList.add('hidden','out');
+      narrativeScan.classList.remove('hidden','out');
+      curPhaseIdx = null;
+      return;
+    }
+    if (narrativeScan && !narrativeScan.classList.contains('hidden')) {
+      narrativeScan.classList.add('hidden','out');
+      overview.classList.remove('hidden','out');
+      curN = null;
+      return;
+    }
+  };
+})();
+
+// enterDetail was written when there were only two screens (overview ↔
+// detail) and only hides #overview. Wrap it so it also hides the new
+// narrative-scan and phase-scan screens, otherwise they bleed through
+// behind the piece grid when the user clicks "See full piece grid →".
+(function(){
+  const _origEnterDetail = window.enterDetail;
+  if (typeof _origEnterDetail !== 'function') return;
+  window.enterDetail = function(id){
+    const ns = document.getElementById('narrative-scan');
+    const ps = document.getElementById('phase-scan');
+    if (ns) ns.classList.add('hidden','out');
+    if (ps) ps.classList.add('hidden','out');
+    // Reset phase index when entering the unscoped detail view.
+    curPhaseIdx = null;
+    _origEnterDetail(id);
+    updatePhaseNavArrows();
+  };
+})();
+
+// ── Phase nav arrows ───────────────────────────────────────────────────
+// One fixed-position pair. Shown only on Z3 (phase-scan) and Z4 (phase-
+// scoped detail). Left arrow → previous phase; right arrow → next phase.
+// Stays on the same zoom level: if you're in Z3 of phase 2, the arrow
+// takes you to Z3 of phase 3; if you're in Z4 of phase 2, it takes you to
+// Z4 of phase 3. Back navigation respects curPhaseIdx, so backing out of
+// Z4-phase-3 lands you in Z3-phase-3 (same phase, parent zoom).
+
+function updatePhaseNavArrows(){
+  const leftA = document.getElementById('phase-nav-left');
+  const rightA = document.getElementById('phase-nav-right');
+  if (!leftA || !rightA) return;
+  const phaseScan = document.getElementById('phase-scan');
+  const detail = document.getElementById('detail');
+  const onPhaseScan = phaseScan && !phaseScan.classList.contains('hidden');
+  const onPhaseDetail = detail && !detail.classList.contains('hidden') && curPhaseIdx != null;
+  if ((!onPhaseScan && !onPhaseDetail) || !curN || curPhaseIdx == null) {
+    leftA.classList.remove('show');
+    rightA.classList.remove('show');
+    return;
+  }
+  const phases = bucketPhases(curN);
+  const i = curPhaseIdx;
+  if (i > 0) {
+    leftA.classList.add('show');
+    document.getElementById('pna-label-left').textContent =
+      `Phase ${i} of ${phases.length}`;
+  } else {
+    leftA.classList.remove('show');
+  }
+  if (i < phases.length - 1) {
+    rightA.classList.add('show');
+    document.getElementById('pna-label-right').textContent =
+      `Phase ${i + 2} of ${phases.length}`;
+  } else {
+    rightA.classList.remove('show');
+  }
+}
+
+function goPhaseRel(direction){
+  if (!curN || curPhaseIdx == null) return;
+  const phases = bucketPhases(curN);
+  const next = curPhaseIdx + direction;
+  if (next < 0 || next >= phases.length) return;
+  const detail = document.getElementById('detail');
+  const onPhaseDetail = detail && !detail.classList.contains('hidden');
+  // Stay on the same zoom level when traversing.
+  if (onPhaseDetail) {
+    curPhaseIdx = next;
+    enterPhaseDetail();
+  } else {
+    enterPhaseScan(next);
+  }
+}
+
+// Keyboard support: ← / → on Z3 and Z4 traverse phases.
+document.addEventListener('keydown', function(e){
+  if (e.target && (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA')) return;
+  if (e.key === 'ArrowLeft')  goPhaseRel(-1);
+  else if (e.key === 'ArrowRight') goPhaseRel(1);
+});
+
+// Hook arrow visibility into the existing transition functions. We can't
+// modify them here without re-defining them, so we wrap.
+(function(){
+  const _origEnterPhaseScan = window.enterPhaseScan;
+  if (typeof _origEnterPhaseScan === 'function') {
+    window.enterPhaseScan = function(idx){
+      _origEnterPhaseScan(idx);
+      updatePhaseNavArrows();
+    };
+  }
+  const _origEnterPhaseDetail = window.enterPhaseDetail;
+  if (typeof _origEnterPhaseDetail === 'function') {
+    window.enterPhaseDetail = function(){
+      _origEnterPhaseDetail();
+      updatePhaseNavArrows();
+    };
+  }
+  const _origEnterNarrativeScan = window.enterNarrativeScan;
+  if (typeof _origEnterNarrativeScan === 'function') {
+    window.enterNarrativeScan = function(id){
+      _origEnterNarrativeScan(id);
+      updatePhaseNavArrows();
+    };
+  }
+  const _origGoBack = window.goBack;
+  if (typeof _origGoBack === 'function') {
+    window.goBack = function(){
+      _origGoBack();
+      updatePhaseNavArrows();
+    };
+  }
+  const _origBackToTopics = window.backToTopics;
+  if (typeof _origBackToTopics === 'function') {
+    window.backToTopics = function(){
+      _origBackToTopics();
+      updatePhaseNavArrows();
+    };
+  }
+})();
 
 // Bootstrap: render topic-selector screen. The user picks a topic, which
 // populates `NARRATIVES` and routes to the overview screen via selectTopic().
