@@ -466,8 +466,13 @@ body[data-mode="user"] .mut-num{display:none!important;}
 /* ── Z2 narrative-scan + Z3 phase-scan (semantic-zoom layers) ─────────── */
 #narrative-scan,#phase-scan{padding:60px 24px;overflow-y:auto;box-sizing:border-box;}
 .nscan-wrap{max-width:920px;margin:0 auto;display:flex;flex-direction:column;gap:24px;}
-.nscan-back{position:absolute;top:18px;left:18px;background:transparent;border:1px solid var(--br);color:var(--t2);font-size:12px;padding:6px 12px;border-radius:6px;cursor:pointer;z-index:5;}
-.nscan-back:hover{border-color:var(--br2);color:var(--t1);}
+/* Match .back-topics styling so all back buttons look uniform across screens. */
+.nscan-back{position:absolute;top:16px;left:16px;background:var(--bg3);border:1px solid var(--br);border-radius:var(--rs);color:var(--t2);padding:6px 14px;font-size:11px;cursor:pointer;display:flex;align-items:center;gap:5px;transition:all .2s;z-index:5;}
+.nscan-back:hover{background:var(--bg4);color:var(--t1);}
+/* Hide developer-only header toggles (Refined/Baseline data + User/Dev view).
+   They live in the detail header but aren't useful to a general audience and
+   make the chrome busier. Re-enable in CSS if a dev/debug build is needed. */
+.dhead .mode-toggle{display:none !important;}
 .nscan-eye{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--t3);}
 .nscan-title{font-size:28px;font-weight:700;letter-spacing:-.4px;color:var(--t1);margin:4px 0;line-height:1.2;}
 .nscan-meta{font-size:12px;color:var(--t2);display:flex;gap:14px;flex-wrap:wrap;}
@@ -838,6 +843,12 @@ var TOUR_STEPS = [
         var badges = document.querySelectorAll('.cp-num');
         var rect;
         if (badges.length) {
+          // Scroll the chip near the top of the viewport so the popup
+          // (which renders near the chip) lands well above the tour modal
+          // at the bottom of the screen. Without this, on shorter viewports
+          // the popup and the tour modal overlap.
+          try { badges[0].scrollIntoView({behavior:'instant', block:'start', inline:'center'}); } catch(e){}
+          void badges[0].offsetTop;
           rect = badges[0].getBoundingClientRect();
         } else {
           var vw = window.innerWidth, vh = window.innerHeight;
