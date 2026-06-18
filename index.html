@@ -544,29 +544,34 @@ body[data-mode="user"] .mut-num{display:none!important;}
 <!-- Each narratives.js file sets `var NARRATIVES = [...]`. We load them in
      sequence and capture into namespaced globals so the user can switch
      between topics from the new #topics screen. -->
-<script src="narrative_tracker_v2/output/hungary/narratives.js"></script>
+<script src="narrative_tracker_v2/output/hungary/narratives.js?v=20260618-120037"></script>
 <script>var NARRATIVES_HU = NARRATIVES;</script>
-<script src="narrative_tracker_v2/output/iran/narratives.js"></script>
+<script src="narrative_tracker_v2/output/iran/narratives.js?v=20260618-120037"></script>
 <script>var NARRATIVES_IRAN = NARRATIVES;</script>
-<script src="narrative_tracker_v2/output/netherlands_v3/narratives.js"></script>
+<script src="narrative_tracker_v2/output/netherlands_v3/narratives.js?v=20260618-120037"></script>
 <script>var NARRATIVES_NL = NARRATIVES;</script>
 <!-- Optional refined data — only present after running `python -m
      narrative_tracker_v2.refine --output-dir output/<corpus> --apply-merge
      --apply-prune`. If the file doesn't exist, the script tag fails silently
      (a console 404 is harmless). The capture-step below namespaces whichever
      globals DID get set, so a missing file leaves the baseline data intact. -->
-<script src="narrative_tracker_v2/output/hungary/refined.js" onerror=""></script>
+<script src="narrative_tracker_v2/output/hungary/refined.js?v=20260618-120037" onerror=""></script>
 <script>if (typeof REFINED !== 'undefined') { var NARRATIVES_HU_REFINED = REFINED; REFINED = undefined; }</script>
-<script src="narrative_tracker_v2/output/hungary/refinement_log.js" onerror=""></script>
+<script src="narrative_tracker_v2/output/hungary/refinement_log.js?v=20260618-120037" onerror=""></script>
 <script>if (typeof REFINEMENT_LOG !== 'undefined') { var REFINEMENT_LOG_HU = REFINEMENT_LOG; REFINEMENT_LOG = undefined; }</script>
-<script src="narrative_tracker_v2/output/iran/refined.js" onerror=""></script>
+<script src="narrative_tracker_v2/output/iran/refined.js?v=20260618-120037" onerror=""></script>
 <script>if (typeof REFINED !== 'undefined') { var NARRATIVES_IRAN_REFINED = REFINED; REFINED = undefined; }</script>
-<script src="narrative_tracker_v2/output/iran/refinement_log.js" onerror=""></script>
+<script src="narrative_tracker_v2/output/iran/refinement_log.js?v=20260618-120037" onerror=""></script>
 <script>if (typeof REFINEMENT_LOG !== 'undefined') { var REFINEMENT_LOG_IRAN = REFINEMENT_LOG; REFINEMENT_LOG = undefined; }</script>
-<script src="narrative_tracker_v2/output/netherlands_v3/refined.js" onerror=""></script>
+<script src="narrative_tracker_v2/output/netherlands_v3/refined.js?v=20260618-120037" onerror=""></script>
 <script>if (typeof REFINED !== 'undefined') { var NARRATIVES_NL_REFINED = REFINED; REFINED = undefined; }</script>
-<script src="narrative_tracker_v2/output/netherlands_v3/refinement_log.js" onerror=""></script>
+<script src="narrative_tracker_v2/output/netherlands_v3/refinement_log.js?v=20260618-120037" onerror=""></script>
 <script>if (typeof REFINEMENT_LOG !== 'undefined') { var REFINEMENT_LOG_NL = REFINEMENT_LOG; REFINEMENT_LOG = undefined; }</script>
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<meta name="build-version" content="20260618-120037">
+<script>(function(){var B="20260618-120037";try{var u=new URL(location.href);if(u.searchParams.get("v")!==B){u.searchParams.set("v",B);location.replace(u.toString());}}catch(e){}})();</script>
 </head>
 <body data-mode="user">
 <div id="app">
@@ -2925,5 +2930,6 @@ document.addEventListener('keydown', function(e){
 // populates `NARRATIVES` and routes to the overview screen via selectTopic().
 renderTopics();
 </script>
+<div style="position:fixed;left:8px;bottom:8px;font:10px/1.2 monospace;color:rgba(255,255,255,0.25);pointer-events:none;user-select:none;z-index:1;">build 20260618-120037</div>
 </body>
 </html>
