@@ -540,38 +540,156 @@ body[data-mode="user"] .mut-num{display:none!important;}
   opacity:0;transition:opacity .2s;pointer-events:none;
 }
 .phase-nav-arrow:hover .pna-label{opacity:1;color:#f97316;}
+
+/* ════════════════════════════════════════════════════════════════════════
+   MOBILE / RESPONSIVE OVERRIDES
+   Pure additions below this point. Every rule is inside a `@media` query
+   so it only fires at narrow widths and CANNOT affect desktop. To revert,
+   delete everything in this block. The pre-mobile snapshot of this file
+   is preserved at `prototypes/_narrative-overview-prototype-v3.pre-mobile.html.bak`.
+   ════════════════════════════════════════════════════════════════════════ */
+
+/* TABLET — ≤900px. Tighten paddings and font sizes; let topic cards
+   stop trying to be side-by-side on narrow tablets. */
+@media (max-width: 900px) {
+  #topics{padding:40px 16px 56px;}
+  .tp-eye{font-size:10.5px;letter-spacing:2px;}
+  .tp-ttl{font-size:26px;line-height:1.2;}
+  .tp-sub{font-size:12px;margin-bottom:32px;max-width:none;padding:0 4px;}
+  .tp-grid{gap:18px;}
+  .tcard{flex:1 1 100%;max-width:560px;padding:22px 20px;gap:11px;}
+  .tcard-title{font-size:18px;}
+
+  #overview{padding:24px 16px 40px;}
+  .ov-ttl{font-size:20px;}
+  .ov-sub{font-size:11.5px;padding:0 8px;text-align:center;}
+  .ov-note{font-size:10px;margin-bottom:22px;text-align:center;}
+  .brow{gap:24px 14px;}
+  .bwrap{width:128px;}
+  .bcirc{width:118px;height:118px;}
+
+  #narrative-scan,#phase-scan{padding:52px 16px 40px;}
+  .nscan-wrap{gap:20px;}
+  .nscan-title{font-size:24px;}
+  .nscan-meta{font-size:11.5px;gap:12px;}
+
+  .dhead{flex-wrap:wrap;padding:9px 12px;gap:8px;}
+
+  #panel.open{width:380px;}
+
+  .phase-nav-arrow{width:40px;height:40px;font-size:20px;}
+  .phase-nav-arrow.left{left:10px;}
+  .phase-nav-arrow.right{right:10px;}
+}
+
+/* PHONE — ≤600px. Bigger structural changes: bubbles shrink, panel
+   becomes a near-full-width drawer, phase nav becomes thumb-sized,
+   tour modal hugs the viewport edges. */
+@media (max-width: 600px) {
+  #topics{padding:24px 12px 40px;}
+  .tp-eye{font-size:9.5px;letter-spacing:1.6px;margin-bottom:10px;}
+  .tp-ttl{font-size:21px;letter-spacing:-.2px;}
+  .tp-sub{font-size:11.5px;margin-bottom:20px;}
+  .tp-grid{gap:14px;}
+  .tcard{padding:16px 14px;gap:9px;border-radius:13px;}
+  .tcard-icon{font-size:32px;}
+  .tcard-title{font-size:16px;}
+  .tcard-stats{gap:10px 12px;font-size:10.5px;padding-bottom:9px;}
+  .tcard-desc{font-size:12px;line-height:1.5;}
+  .tcard-cta{font-size:10.5px;padding-top:10px;}
+
+  #overview{padding:20px 12px 36px;}
+  .ov-eye{font-size:9px;letter-spacing:1.4px;}
+  .ov-ttl{font-size:18px;}
+  .ov-sub{font-size:11px;line-height:1.45;}
+  .ov-note{margin-bottom:18px;}
+  .brow{gap:18px 10px;}
+  .bwrap{width:108px;gap:8px;}
+  .bcirc{width:96px;height:96px;border-width:1px;}
+
+  /* Back buttons: smaller, tighter to the corner */
+  .back-topics,.nscan-back{top:10px;left:10px;padding:5px 10px;font-size:10.5px;}
+
+  /* Narrative + phase scan — denser typography, room for thumb */
+  #narrative-scan,#phase-scan{padding:48px 12px 36px;}
+  .nscan-wrap{gap:18px;}
+  .nscan-title{font-size:20px;}
+  .nscan-meta{font-size:11px;gap:10px;}
+  .nscan-story{font-size:13px;padding:13px 14px;line-height:1.55;}
+  .nscan-story-footer{font-size:10.5px;}
+  .nscan-actor-row{font-size:12px;gap:8px;}
+  .nscan-actor-lbl{min-width:44px;font-size:9.5px;}
+  .nscan-pill{font-size:11.5px;padding:2px 8px;}
+  .nscan-phase-card{padding:12px 14px;grid-template-columns:30px 1fr auto;gap:12px;}
+  .nscan-phase-num{width:30px;height:30px;font-size:13px;}
+  .nscan-phase-name{font-size:13px;}
+  .nscan-phase-dates{font-size:10px;}
+  .nscan-phase-count{font-size:11.5px;}
+  .nscan-phase-shift{font-size:11.5px;}
+  .nscan-action-btn{font-size:11.5px;padding:7px 13px;}
+
+  /* Hero pieces: full-width single column on phone */
+  .pscan-hero-grid{grid-template-columns:1fr;gap:10px;}
+  .pscan-hero-card{padding:12px;}
+  .pscan-context{padding:12px 14px;gap:9px;}
+  .pscan-context-text{font-size:12.5px;}
+  .pscan-shift{font-size:12.5px;padding:11px 14px;}
+
+  /* Detail header: stack tightly, allow wrapping */
+  .dhead{padding:8px 10px;gap:6px;}
+
+  /* Piece panel: near-full-width drawer instead of fixed 420px */
+  #panel.open{width:92vw;max-width:420px;}
+
+  /* Phase nav arrows: smaller, tighter to the screen edge,
+     drop the hover label (no hover on touch). */
+  .phase-nav-arrow{width:34px;height:34px;font-size:18px;}
+  .phase-nav-arrow.left{left:4px;}
+  .phase-nav-arrow.right{right:4px;}
+  .phase-nav-arrow .pna-label{display:none;}
+
+  /* Tour modal: fill the bottom edge, leave 12px margin */
+  .tour-modal{width:calc(100vw - 24px);padding:12px 14px;}
+  .tour-modal h3{font-size:14px;}
+  .tour-body{font-size:12.5px;}
+
+  /* Help button: tiny, out of the way */
+  .help-btn{width:30px;height:30px;font-size:13px;bottom:10px;right:10px;}
+
+  /* Build indicator (bottom-left from build_demo.py): keep visible but small */
+}
 </style>
 <!-- Each narratives.js file sets `var NARRATIVES = [...]`. We load them in
      sequence and capture into namespaced globals so the user can switch
      between topics from the new #topics screen. -->
-<script src="narrative_tracker_v2/output/hungary/narratives.js?v=20260622-095003"></script>
+<script src="narrative_tracker_v2/output/hungary/narratives.js?v=20260622-105720"></script>
 <script>var NARRATIVES_HU = NARRATIVES;</script>
-<script src="narrative_tracker_v2/output/iran/narratives.js?v=20260622-095003"></script>
+<script src="narrative_tracker_v2/output/iran/narratives.js?v=20260622-105720"></script>
 <script>var NARRATIVES_IRAN = NARRATIVES;</script>
-<script src="narrative_tracker_v2/output/netherlands_v3/narratives.js?v=20260622-095003"></script>
+<script src="narrative_tracker_v2/output/netherlands_v3/narratives.js?v=20260622-105720"></script>
 <script>var NARRATIVES_NL = NARRATIVES;</script>
 <!-- Optional refined data — only present after running `python -m
      narrative_tracker_v2.refine --output-dir output/<corpus> --apply-merge
      --apply-prune`. If the file doesn't exist, the script tag fails silently
      (a console 404 is harmless). The capture-step below namespaces whichever
      globals DID get set, so a missing file leaves the baseline data intact. -->
-<script src="narrative_tracker_v2/output/hungary/refined.js?v=20260622-095003" onerror=""></script>
+<script src="narrative_tracker_v2/output/hungary/refined.js?v=20260622-105720" onerror=""></script>
 <script>if (typeof REFINED !== 'undefined') { var NARRATIVES_HU_REFINED = REFINED; REFINED = undefined; }</script>
-<script src="narrative_tracker_v2/output/hungary/refinement_log.js?v=20260622-095003" onerror=""></script>
+<script src="narrative_tracker_v2/output/hungary/refinement_log.js?v=20260622-105720" onerror=""></script>
 <script>if (typeof REFINEMENT_LOG !== 'undefined') { var REFINEMENT_LOG_HU = REFINEMENT_LOG; REFINEMENT_LOG = undefined; }</script>
-<script src="narrative_tracker_v2/output/iran/refined.js?v=20260622-095003" onerror=""></script>
+<script src="narrative_tracker_v2/output/iran/refined.js?v=20260622-105720" onerror=""></script>
 <script>if (typeof REFINED !== 'undefined') { var NARRATIVES_IRAN_REFINED = REFINED; REFINED = undefined; }</script>
-<script src="narrative_tracker_v2/output/iran/refinement_log.js?v=20260622-095003" onerror=""></script>
+<script src="narrative_tracker_v2/output/iran/refinement_log.js?v=20260622-105720" onerror=""></script>
 <script>if (typeof REFINEMENT_LOG !== 'undefined') { var REFINEMENT_LOG_IRAN = REFINEMENT_LOG; REFINEMENT_LOG = undefined; }</script>
-<script src="narrative_tracker_v2/output/netherlands_v3/refined.js?v=20260622-095003" onerror=""></script>
+<script src="narrative_tracker_v2/output/netherlands_v3/refined.js?v=20260622-105720" onerror=""></script>
 <script>if (typeof REFINED !== 'undefined') { var NARRATIVES_NL_REFINED = REFINED; REFINED = undefined; }</script>
-<script src="narrative_tracker_v2/output/netherlands_v3/refinement_log.js?v=20260622-095003" onerror=""></script>
+<script src="narrative_tracker_v2/output/netherlands_v3/refinement_log.js?v=20260622-105720" onerror=""></script>
 <script>if (typeof REFINEMENT_LOG !== 'undefined') { var REFINEMENT_LOG_NL = REFINEMENT_LOG; REFINEMENT_LOG = undefined; }</script>
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
-<meta name="build-version" content="20260622-095003">
-<script>(function(){var B="20260622-095003";try{var u=new URL(location.href);if(u.searchParams.get("v")!==B){u.searchParams.set("v",B);location.replace(u.toString());}}catch(e){}})();</script>
+<meta name="build-version" content="20260622-105720">
+<script>(function(){var B="20260622-105720";try{var u=new URL(location.href);if(u.searchParams.get("v")!==B){u.searchParams.set("v",B);location.replace(u.toString());}}catch(e){}})();</script>
 </head>
 <body data-mode="user">
 <div id="app">
@@ -2986,6 +3104,6 @@ document.addEventListener('keydown', function(e){
 // populates `NARRATIVES` and routes to the overview screen via selectTopic().
 renderTopics();
 </script>
-<div style="position:fixed;left:8px;bottom:8px;font:10px/1.2 monospace;color:rgba(255,255,255,0.25);pointer-events:none;user-select:none;z-index:1;">build 20260622-095003</div>
+<div style="position:fixed;left:8px;bottom:8px;font:10px/1.2 monospace;color:rgba(255,255,255,0.25);pointer-events:none;user-select:none;z-index:1;">build 20260622-105720</div>
 </body>
 </html>
