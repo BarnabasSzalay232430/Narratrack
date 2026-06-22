@@ -3169,7 +3169,7 @@ var REFINED = [
         "after_piece_id": "n1_p6",
         "after_piece_title": "With the Hungarian election scheduled for April 12…",
         "date": "2026-04-05T10:42:15+00:00",
-        "explanation": "The narrative shifted to focus on the upcoming election and related controversies involving Viktor Orbán on 2026-04-05.",
+        "explanation": "Before 2026-04-05, discussion focused on Viktor Orbán's long rule and structural obstacles to unseating him. After 2026-04-05, attention shifted to immediate election tensions, including anti war propaganda, alleged terror plots, and fears of civil unrest surrounding the upcoming Hungarian election.",
         "explanationDiag": {
           "validated": true
         }
@@ -3180,7 +3180,7 @@ var REFINED = [
         "after_piece_id": "n1_p16",
         "after_piece_title": "Hungary's Tisza party seen winning two-thirds majority…",
         "date": "2026-04-10T18:21:14+00:00",
-        "explanation": "The narrative shifted to focus on election results with Viktor Orban's party seen winning a majority on 2026-04-10.",
+        "explanation": "Before 2026-04-10, discussion focused on anti-Orbán protests and concerns about Hungary's political direction. After 2026-04-10, attention shifted to the Tisza party's projected electoral victory and Viktor Orbán's declining chances in the Hungary election.",
         "explanationDiag": {
           "validated": true
         }
@@ -3191,7 +3191,7 @@ var REFINED = [
         "after_piece_id": "n1_p26",
         "after_piece_title": "Asking Ukraine to cede land 'unworthy' of Hungary's…",
         "date": "2026-04-13T15:06:34+00:00",
-        "explanation": "The narrative shifted to focus on Peter Magyar's election win and his policies, replacing earlier topics about the election and diplomatic relations.",
+        "explanation": "Before 2026-04-13, discussion focused on concerns about election manipulation and comparisons between Viktor Orbán and Peter Magyar. After 2026-04-13, attention shifted to Peter Magyar's post-election actions and policy positions, including statements on Ukraine, state media, and EU financial support.",
         "explanationDiag": {
           "validated": true
         }
@@ -6323,7 +6323,7 @@ var REFINED = [
         "after_piece_id": "n2_p16",
         "after_piece_title": "The Election Commission illegally fined 3.2 million…",
         "date": "2026-04-15T17:40:51+00:00",
-        "explanation": "The focus shifted from international relations and media reports to election-related controversies and political analysis on 2026-04-15.",
+        "explanation": "Before 2026-04-15, discussion focused on symbolic moments and public reactions involving Magyar Péter and Tisza, such as viral memorabilia and supportive gestures. After 2026-04-15, attention shifted to allegations of legal injustices, political consequences, and accountability for media actions.",
         "explanationDiag": {
           "validated": true
         }
@@ -6334,7 +6334,7 @@ var REFINED = [
         "after_piece_id": "n2_p26",
         "after_piece_title": "According to one of the richest Hungarians, Dániel…",
         "date": "2026-04-16T11:50:11+00:00",
-        "explanation": "The narrative shifted from Orbán to other Fidesz leaders like Péter Magyar, Dániel Mihály, and Zétény Varga on 2026-04-16.",
+        "explanation": "Before 2026-04-16, discussion focused on condemnation of Fidesz and skepticism toward Magyar Péter's actions. After 2026-04-16, attention shifted to economic perspectives and potential renewal within Fidesz, highlighting figures like Jellinek Dániel, Nagy Márton, and Varga Zétény.",
         "explanationDiag": {
           "validated": true
         }

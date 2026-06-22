@@ -8210,7 +8210,7 @@ var NARRATIVES = [
         "after_piece_id": "n1_p31",
         "after_piece_title": "Iran’s Supreme National Security Council says it has…",
         "date": "2026-04-07T23:15:17+00:00",
-        "explanation": "The shift on 2026-04-07 involved Iran's Supreme National Security Council responding, marking a change in how Iran communicated about the tensions.",
+        "explanation": "Before 2026-04-07, discussion focused on threats from Trump and proposals for a ceasefire between Iran and the US. After 2026-04-07, attention shifted to Iran’s Supreme National Security Council accepting a two-week ceasefire and the immediate regional response to the agreement.",
         "explanationDiag": {
           "validated": true
         }
@@ -8221,7 +8221,7 @@ var NARRATIVES = [
         "after_piece_id": "n1_p81",
         "after_piece_title": "Trump warns Iran blockade could last months, sending…",
         "date": "2026-04-29T17:22:21+00:00",
-        "explanation": "The shift on 2026-04-29 involved Iran's Guards seizing wartime power and Trump warning of a potential long-term blockade.",
+        "explanation": "Before 2026-04-29, discussion focused on Israeli military actions in Lebanon and Iran’s internal power shifts. After 2026-04-29, attention shifted to Trump’s warnings about an Iran blockade and the resulting impact on oil markets and international diplomacy.",
         "explanationDiag": {
           "validated": true
         }
@@ -8232,7 +8232,7 @@ var NARRATIVES = [
         "after_piece_id": "n1_p96",
         "after_piece_title": "Iran submits 14-point response to U.S. proposal to end…",
         "date": "2026-05-03T19:53:02+00:00",
-        "explanation": "The shift on 2026-05-03 involved Iran's response changing from offering a deal to warning of attacks after Trump's guidance statement.",
+        "explanation": "Before 2026-05-03, discussion focused on Iran's efforts to end the war and Donald Trump's demands for greater concessions. After 2026-05-03, attention shifted to Iran's formal response to the U.S. proposal and escalating military tensions in the Strait of Hormuz.",
         "explanationDiag": {
           "validated": true
         }
@@ -8370,7 +8370,7 @@ var NARRATIVES = [
         "model": "Davlan/bert-base-multilingual-cased-ner-hrl"
       }
     },
-    "story": "Israel launches an attack on Iran on February 28, 2026, escalating tensions. By April 29, Iran's Guards seize wartime power and Trump warns of a potential long-term blockade. On May 5, Iran threatens to attack the US Navy if it enters the Strait of Hormuz, marking the end of heightened hostilities."
+    "story": "Tensions erupted in late February 2026 when Israel launched attacks on Iran, prompting swift Iranian retaliation and the reported death of the country's supreme leader. Over the following weeks, the conflict escalated with Iranian ballistic missile strikes, shifting control of the Strait of Hormuz, and mounting threats and countermeasures involving Trump, the US Navy, and regional actors, as diplomatic efforts for a ceasefire repeatedly faltered. By early May, Iran had set a UAE oil port ablaze, threatened to attack the US Navy if it entered the Strait, and Trump responded with warnings of overwhelming force, leaving the region on the brink of further escalation."
   },
   {
     "id": "n2",
@@ -8783,7 +8783,7 @@ var NARRATIVES = [
         "model": "Davlan/bert-base-multilingual-cased-ner-hrl"
       }
     },
-    "story": "On April 3, 2026, a U.S. fighter jet was shot down over Iran, prompting a search operation. The following day, another USAF combat plane crashed near Hormuz, complicating the situation further. By April 5, one pilot had been rescued, but the second airman remained missing as rescue efforts continued."
+    "story": "On April 3, 2026, a U.S. fighter jet was shot down over Iran, prompting an urgent search and rescue effort. As the situation escalated, reports emerged of a second USAF combat plane crashing near Hormuz, with ongoing operations to locate and recover the airmen involved. By April 5, 2026, one pilot had been rescued while efforts continued to account for the second airman from the downed F-15E, highlighting the risks faced by U.S. forces operating inside Iran."
   },
   {
     "id": "n3",
@@ -9042,7 +9042,7 @@ var NARRATIVES = [
         "model": "Davlan/bert-base-multilingual-cased-ner-hrl"
       }
     },
-    "story": "On March 19, Iran executed three men, including a 19-year-old wrestler. By May 4, the Tehran regime carried out executions of three more protesters, one 'without a fair trial,' indicating an escalation in response to ongoing protests."
+    "story": "On March 19, 2026, Iran executed three men, including a 19-year-old wrestler, in the aftermath of protests. Over the following weeks, further executions signaled the authorities' continued crackdown on dissent. By May 4, 2026, the Tehran regime had carried out the execution of three additional protesters, including one reportedly without due process, marking an escalation in punitive actions."
   },
   {
     "id": "n4",
@@ -9747,7 +9747,7 @@ var NARRATIVES = [
         "after_piece_id": "n4_p6",
         "after_piece_title": "Senior BBC Iran reporter exposed as opposition…",
         "date": "2026-04-10T09:23:16+00:00",
-        "explanation": "The narrative shifted to focus on a BBC reporter and Iran's leader Khamenei after 2026-04-10.",
+        "explanation": "Before 2026-04-10, discussion focused on public reactions to Iran's actions and opposition to the war, including criticism of Trump and Stellantis autoworkers' protests. After 2026-04-10, attention shifted to controversy surrounding BBC Iran and its reporter's stance on Iran, as well as commentary on Khamenei.",
         "explanationDiag": {
           "validated": true
         }
@@ -9885,7 +9885,7 @@ var NARRATIVES = [
         "model": "Davlan/bert-base-multilingual-cased-ner-hrl"
       }
     },
-    "story": "Trump blamed Iran for a F-35 shoot-down in the Strait of Hormuz on April 1st. The narrative shifted on April 10th when a BBC reporter was exposed and Khamenei's influence resurfaced, focusing on his leadership until April 15th."
+    "story": "Following the downing of a US F-35 jet over Iran in early April 2026, public debate erupted around responsibility for the incident, with criticism directed at Donald Trump and heightened tensions in the Strait of Hormuz. As the situation unfolded, discussions expanded to include opposition to the conflict, protests by Stellantis autoworkers in Detroit, and viral responses such as a high-profile Trump diss. By mid-April, attention shifted toward controversy involving BBC Iran and its reporter's stance, culminating in renewed focus on Khamenei and diplomatic maneuvering described as 'The Art of The Deal.'"
   },
   {
     "id": "n5",
@@ -10561,7 +10561,7 @@ var NARRATIVES = [
         "model": "Davlan/bert-base-multilingual-cased-ner-hrl"
       }
     },
-    "story": "Qatar announced the arrest of Iran’s IRGC sleeper cells on March 4, 2026, sparking tensions. By May 5, U.S.-Iran relations remained strained as food shortages in Africa were linked to potential conflict, with key figures like Marco Rubio and Senate Republicans playing pivotal roles."
+    "story": "Tensions escalated in early March 2026 when Qatar announced the arrest of Iran’s IRGC sleeper cells, highlighting growing regional security concerns. In the following weeks, international dynamics shifted as Serbia agreed to produce combat drones with Israel, while US domestic debates intensified over Senate Republicans repeatedly blocking efforts to halt Trump’s actions and reports emerged of US equipment ending up in Iran’s possession. By May 5, 2026, fears mounted globally as discussions focused on the potential for an Iran war to trigger food shortages in Africa, underscoring the far-reaching consequences of the ongoing US-Iran negotiation dynamics."
   },
   {
     "id": "n6",
@@ -10907,6 +10907,6 @@ var NARRATIVES = [
         "model": "Davlan/bert-base-multilingual-cased-ner-hrl"
       }
     },
-    "story": "Trump announced on May 4, 2026, that the US Navy would 'guide' ships through the Strait of Hormuz in multiple threads. This plan was detailed further on the same day with Trump stating the US would begin escorting ships in the strait. The final thread confirmed Trump's new policy for guiding merchant ships through the area immediately."
+    "story": "On May 4, 2026, Trump announced that the US Navy would begin to 'guide' merchant ships through the Strait of Hormuz, citing rising concerns over maritime security in the region. The plan, detailed in multiple statements that day, outlined a new US initiative to actively escort commercial vessels navigating the strategic waterway. By the end of the day, the US Navy was publicly positioned to take on a direct role in safeguarding shipping routes through the Strait of Hormuz, signaling a significant operational shift in US involvement there."
   }
 ];

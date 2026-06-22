@@ -8131,7 +8131,7 @@ var REFINED = [
         "after_piece_id": "n1_p31",
         "after_piece_title": "Iran’s Supreme National Security Council says it has…",
         "date": "2026-04-07T23:15:17+00:00",
-        "explanation": "The shift on 2026-04-07 involved Iran's Supreme National Security Council responding, marking a change in how Iran communicated about the tensions.",
+        "explanation": "Before 2026-04-07, discussion focused on threats from Trump and proposals for a ceasefire between Iran and the US. After 2026-04-07, attention shifted to Iran’s Supreme National Security Council accepting a two-week ceasefire and the immediate regional response to the agreement.",
         "explanationDiag": {
           "validated": true
         }
@@ -8142,7 +8142,7 @@ var REFINED = [
         "after_piece_id": "n1_p81",
         "after_piece_title": "Trump warns Iran blockade could last months, sending…",
         "date": "2026-04-29T17:22:21+00:00",
-        "explanation": "The shift on 2026-04-29 involved Iran's Guards seizing wartime power and Trump warning of a potential long-term blockade.",
+        "explanation": "Before 2026-04-29, discussion focused on Israeli military actions in Lebanon and Iran’s internal power shifts. After 2026-04-29, attention shifted to Trump’s warnings about an Iran blockade and the resulting impact on oil markets and international diplomacy.",
         "explanationDiag": {
           "validated": true
         }
@@ -8153,7 +8153,7 @@ var REFINED = [
         "after_piece_id": "n1_p96",
         "after_piece_title": "Iran submits 14-point response to U.S. proposal to end…",
         "date": "2026-05-03T19:53:02+00:00",
-        "explanation": "The shift on 2026-05-03 involved Iran's response changing from offering a deal to warning of attacks after Trump's guidance statement.",
+        "explanation": "Before 2026-05-03, discussion focused on Iran's efforts to end the war and Donald Trump's demands for greater concessions. After 2026-05-03, attention shifted to Iran's formal response to the U.S. proposal and escalating military tensions in the Strait of Hormuz.",
         "explanationDiag": {
           "validated": true
         }
@@ -9610,7 +9610,7 @@ var REFINED = [
         "after_piece_id": "n4_p6",
         "after_piece_title": "Senior BBC Iran reporter exposed as opposition…",
         "date": "2026-04-10T09:23:16+00:00",
-        "explanation": "The narrative shifted to focus on a BBC reporter and Iran's leader Khamenei after 2026-04-10.",
+        "explanation": "Before 2026-04-10, discussion focused on public reactions to Iran's actions and opposition to the war, including criticism of Trump and Stellantis autoworkers' protests. After 2026-04-10, attention shifted to controversy surrounding BBC Iran and its reporter's stance on Iran, as well as commentary on Khamenei.",
         "explanationDiag": {
           "validated": true
         }

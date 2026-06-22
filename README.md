@@ -1,6 +1,6 @@
 # Narrative Tracker — Demo
 
-Build: `20260618-120037`
+Build: `20260622-095003`
 
 This folder is the deployable static demo. Open `index.html` directly in
 a browser, or visit the GitHub Pages URL for this repository.
@@ -8,8 +8,8 @@ a browser, or visit the GitHub Pages URL for this repository.
 ## Cache busting
 
 Every build stamps a UTC timestamp version into the HTML. All data-file
-script URLs carry `?v=20260618-120037` so browsers always fetch the
-latest version after a re-deploy. A small `build 20260618-120037`
+script URLs carry `?v=20260622-095003` so browsers always fetch the
+latest version after a re-deploy. A small `build 20260622-095003`
 indicator at the bottom-left of the page lets you confirm which build
 a tab is running.
 

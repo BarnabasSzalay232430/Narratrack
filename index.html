@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Reddit Narratives — Auto-discovered v1 · Information Disorder MindLabs</title>
+<title>Reddit Narratives — Auto-discovered v3 · Information Disorder MindLabs</title>
 <style>
 :root {
   --bg:#0c1420; --bg2:#111e30; --bg3:#182540; --bg4:#1e2d4e;
@@ -544,47 +544,47 @@ body[data-mode="user"] .mut-num{display:none!important;}
 <!-- Each narratives.js file sets `var NARRATIVES = [...]`. We load them in
      sequence and capture into namespaced globals so the user can switch
      between topics from the new #topics screen. -->
-<script src="narrative_tracker_v2/output/hungary/narratives.js?v=20260618-120037"></script>
+<script src="narrative_tracker_v2/output/hungary/narratives.js?v=20260622-095003"></script>
 <script>var NARRATIVES_HU = NARRATIVES;</script>
-<script src="narrative_tracker_v2/output/iran/narratives.js?v=20260618-120037"></script>
+<script src="narrative_tracker_v2/output/iran/narratives.js?v=20260622-095003"></script>
 <script>var NARRATIVES_IRAN = NARRATIVES;</script>
-<script src="narrative_tracker_v2/output/netherlands_v3/narratives.js?v=20260618-120037"></script>
+<script src="narrative_tracker_v2/output/netherlands_v3/narratives.js?v=20260622-095003"></script>
 <script>var NARRATIVES_NL = NARRATIVES;</script>
 <!-- Optional refined data — only present after running `python -m
      narrative_tracker_v2.refine --output-dir output/<corpus> --apply-merge
      --apply-prune`. If the file doesn't exist, the script tag fails silently
      (a console 404 is harmless). The capture-step below namespaces whichever
      globals DID get set, so a missing file leaves the baseline data intact. -->
-<script src="narrative_tracker_v2/output/hungary/refined.js?v=20260618-120037" onerror=""></script>
+<script src="narrative_tracker_v2/output/hungary/refined.js?v=20260622-095003" onerror=""></script>
 <script>if (typeof REFINED !== 'undefined') { var NARRATIVES_HU_REFINED = REFINED; REFINED = undefined; }</script>
-<script src="narrative_tracker_v2/output/hungary/refinement_log.js?v=20260618-120037" onerror=""></script>
+<script src="narrative_tracker_v2/output/hungary/refinement_log.js?v=20260622-095003" onerror=""></script>
 <script>if (typeof REFINEMENT_LOG !== 'undefined') { var REFINEMENT_LOG_HU = REFINEMENT_LOG; REFINEMENT_LOG = undefined; }</script>
-<script src="narrative_tracker_v2/output/iran/refined.js?v=20260618-120037" onerror=""></script>
+<script src="narrative_tracker_v2/output/iran/refined.js?v=20260622-095003" onerror=""></script>
 <script>if (typeof REFINED !== 'undefined') { var NARRATIVES_IRAN_REFINED = REFINED; REFINED = undefined; }</script>
-<script src="narrative_tracker_v2/output/iran/refinement_log.js?v=20260618-120037" onerror=""></script>
+<script src="narrative_tracker_v2/output/iran/refinement_log.js?v=20260622-095003" onerror=""></script>
 <script>if (typeof REFINEMENT_LOG !== 'undefined') { var REFINEMENT_LOG_IRAN = REFINEMENT_LOG; REFINEMENT_LOG = undefined; }</script>
-<script src="narrative_tracker_v2/output/netherlands_v3/refined.js?v=20260618-120037" onerror=""></script>
+<script src="narrative_tracker_v2/output/netherlands_v3/refined.js?v=20260622-095003" onerror=""></script>
 <script>if (typeof REFINED !== 'undefined') { var NARRATIVES_NL_REFINED = REFINED; REFINED = undefined; }</script>
-<script src="narrative_tracker_v2/output/netherlands_v3/refinement_log.js?v=20260618-120037" onerror=""></script>
+<script src="narrative_tracker_v2/output/netherlands_v3/refinement_log.js?v=20260622-095003" onerror=""></script>
 <script>if (typeof REFINEMENT_LOG !== 'undefined') { var REFINEMENT_LOG_NL = REFINEMENT_LOG; REFINEMENT_LOG = undefined; }</script>
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
-<meta name="build-version" content="20260618-120037">
-<script>(function(){var B="20260618-120037";try{var u=new URL(location.href);if(u.searchParams.get("v")!==B){u.searchParams.set("v",B);location.replace(u.toString());}}catch(e){}})();</script>
+<meta name="build-version" content="20260622-095003">
+<script>(function(){var B="20260622-095003";try{var u=new URL(location.href);if(u.searchParams.get("v")!==B){u.searchParams.set("v",B);location.replace(u.toString());}}catch(e){}})();</script>
 </head>
 <body data-mode="user">
 <div id="app">
 <div id="topics" class="screen">
   <div class="tp-eye">Information Disorder MindLabs</div>
-  <div class="tp-ttl">Two narrative landscapes from Reddit · v1</div>
+  <div class="tp-ttl">Three narrative landscapes from Reddit · v3</div>
   <div class="tp-sub">Each topic clusters Reddit threads into auto-discovered narratives. Pick one to explore.</div>
   <div class="tp-grid" id="tp-grid"></div>
 </div>
 <div id="overview" class="screen hidden out">
   <button class="back-topics" onclick="backToTopics()">← Topics</button>
   <div class="ov-eye">Information Disorder MindLabs · Narrative Landscape</div>
-  <div class="ov-ttl">Reddit Narratives — Auto-discovered v1</div>
+  <div class="ov-ttl">Reddit Narratives — Auto-discovered v3</div>
   <div class="ov-note">What Reddit said — narratives as they spread, not an assessment of factual accuracy</div>
   <div class="ov-sub">Click a narrative to explore</div>
   <div class="ov-context" id="ov-context"></div>
@@ -686,7 +686,6 @@ body[data-mode="user"] .mut-num{display:none!important;}
   <div class="li"><div class="ld" style="background:rgba(99,102,241,.6);box-shadow:0 0 0 1.5px rgba(99,102,241,.35)"></div>Discussion link</div>
   <div class="lsep"></div>
   <div class="li" style="gap:6px"><div style="width:18px;height:2px;background:rgba(253,230,138,.7)"></div>Narrative shift</div>
-  <div class="li" style="gap:6px"><div style="width:18px;height:1px;border-top:1.5px dashed rgba(255,218,80,.4)"></div>Election day</div>
 </div>
 <div id="mut-popup" class="mut-popup" style="display:none"></div>
 
@@ -1094,16 +1093,19 @@ document.addEventListener('click', function(ev){
 // ══════════════════════════════════════════════════════════
 // TOPIC METADATA
 // ══════════════════════════════════════════════════════════
+// TOPICS holds only what is NOT data-derivable: the icon, the
+// user-facing title, the eyebrow label, and the bindings to the
+// loaded data arrays. The user-facing dateRange, threadCount, subs
+// and topic description are all computed at render time by
+// _deriveTopicMeta() from the narratives actually loaded — see
+// the audit note in the README. This keeps the prototype in lock-
+// step with the data even when corpora are re-scraped or refined.
 const TOPICS = {
   hu: {
     id: 'hu',
     icon: '🇭🇺',
     title: 'Hungary 2026 Election',
     eyeLabel: 'Hungary 2026',
-    dateRange: 'Mar 31 – Apr 16 2026',
-    threadCount: 535,
-    subs: 'r/europe · r/worldnews · r/news · r/hungary',
-    desc: "Orbán's Fidesz defeated by Péter Magyar's Tisza party after 16 years in power. Post-victory r/hungary discourse, Russia-Hungary diplomatic fallout, JD Vance's pre-election visit.",
     baselineData: (typeof NARRATIVES_HU !== 'undefined') ? NARRATIVES_HU : [],
     refinedData: (typeof NARRATIVES_HU_REFINED !== 'undefined') ? NARRATIVES_HU_REFINED : null,
     refinementLog: (typeof REFINEMENT_LOG_HU !== 'undefined') ? REFINEMENT_LOG_HU : null,
@@ -1113,10 +1115,6 @@ const TOPICS = {
     icon: '🇮🇷',
     title: '2026 Iran War',
     eyeLabel: 'Iran War 2026',
-    dateRange: 'Feb 26 – May 5 2026',
-    threadCount: 1369,
-    subs: '14 subreddits, multi-perspective',
-    desc: 'Israeli strikes on Iranian nuclear facilities, US bunker-buster intervention at Fordow, Iranian missile retaliation, Strait of Hormuz blockade, ceasefire negotiations.',
     baselineData: (typeof NARRATIVES_IRAN !== 'undefined') ? NARRATIVES_IRAN : [],
     refinedData: (typeof NARRATIVES_IRAN_REFINED !== 'undefined') ? NARRATIVES_IRAN_REFINED : null,
     refinementLog: (typeof REFINEMENT_LOG_IRAN !== 'undefined') ? REFINEMENT_LOG_IRAN : null,
@@ -1126,10 +1124,6 @@ const TOPICS = {
     icon: '🇳🇱',
     title: 'Netherlands Asylum Protests 2026',
     eyeLabel: 'NL Asylum 2026',
-    dateRange: 'Apr 1 – Jun 14 2026',
-    threadCount: 151,
-    subs: 'r/nederland · r/thenetherlands · r/Netherlands',
-    desc: 'Anti-asylum protests across Dutch towns. Reddit discussion of AZC reception tensions (Ter Apel, Loosdrecht, Den Bosch), the Spreidingswet asylum-distribution debate, and the political response from the new coalition. 151 threads cluster into a single dominant narrative.',
     baselineData: (typeof NARRATIVES_NL !== 'undefined') ? NARRATIVES_NL : [],
     refinedData: (typeof NARRATIVES_NL_REFINED !== 'undefined') ? NARRATIVES_NL_REFINED : null,
     refinementLog: (typeof REFINEMENT_LOG_NL !== 'undefined') ? REFINEMENT_LOG_NL : null,
@@ -1154,26 +1148,87 @@ function topicHasRefined(topicId) {
 // render it before the user picks a topic.
 let currentTopicId = null;
 
+// Derive the user-facing topic-card metadata from the actual narrative data
+// rather than a hardcoded TOPICS entry. dateStart/end is min/max across the
+// kept narratives; threadCount is the count of unique thread IDs that
+// survived clustering (i.e. what the prototype actually shows, not the
+// upstream scrape total — those two numbers differ); subs is the unique
+// subreddit list across all surviving threads; narrativeLabels is the
+// per-storyline header list, used to replace the hand-written topic
+// description with a data-derived "Storylines: ..." string.
+function _deriveTopicMeta(data){
+  if (!data || !data.length) {
+    return { dateRange: '—', threadCount: 0, subs: '—', narrativeLabels: [] };
+  }
+  var starts = data.map(function(n){return n.dateStart;}).filter(Boolean).sort();
+  var ends   = data.map(function(n){return n.dateEnd  ;}).filter(Boolean).sort();
+  var dateStart = starts[0], dateEnd = ends[ends.length - 1];
+  var threadIds = new Set();
+  var subs = new Set();
+  data.forEach(function(n){
+    (n.pieces || []).forEach(function(p){
+      (p.threads || []).forEach(function(t){
+        if (t.tid) threadIds.add(t.tid);
+        if (t.sub) subs.add(t.sub);
+      });
+    });
+  });
+  var fmtMD = function(iso){
+    if (!iso) return '?';
+    var d = new Date(iso);
+    var MN = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+    return d.getDate() + ' ' + MN[d.getMonth()];
+  };
+  var yr = dateEnd ? new Date(dateEnd).getFullYear() : '';
+  // Subreddit summary: list all if 5 or fewer, otherwise show the first
+  // 4 alphabetically + "+N more" so the overview subtitle stays compact
+  // on corpora that span many communities (e.g. Iran has 12).
+  var subsArr = Array.from(subs).sort();
+  var subsStr = subsArr.length === 0
+    ? '—'
+    : subsArr.length <= 5
+      ? subsArr.join(' · ')
+      : subsArr.slice(0, 4).join(' · ') + ' · +' + (subsArr.length - 4) + ' more';
+  return {
+    dateStart: dateStart,
+    dateEnd: dateEnd,
+    dateRange: (dateStart && dateEnd) ? (fmtMD(dateStart) + ' – ' + fmtMD(dateEnd) + ' ' + yr) : '—',
+    threadCount: threadIds.size,
+    subs: subsStr,
+    subsList: subsArr,
+    narrativeLabels: data.map(function(n){return n.label;}).filter(Boolean),
+  };
+}
+
 function renderTopics(){
   const grid=document.getElementById('tp-grid');
   if(!grid)return;
   grid.innerHTML='';
   Object.values(TOPICS).forEach(t=>{
     const c=document.createElement('div');c.className='tcard';
-    const nNarr=getActiveData(t.id).length;
-    const empty=nNarr===0;
-    c.style.opacity=empty?0.45:1;
-    c.style.cursor=empty?'not-allowed':'pointer';
-    if(!empty)c.onclick=()=>selectTopic(t.id);
+    const data = getActiveData(t.id);
+    const nNarr = data.length;
+    const empty = nNarr === 0;
+    c.style.opacity = empty ? 0.45 : 1;
+    c.style.cursor = empty ? 'not-allowed' : 'pointer';
+    if (!empty) c.onclick = () => selectTopic(t.id);
+    // Topic-card metadata is now data-derived from the kept narratives,
+    // not from a hand-typed TOPICS entry. The description below is the
+    // list of narrative labels — the most honest "what's inside this
+    // topic" answer we can give without hand-written prose.
+    const meta = _deriveTopicMeta(data);
+    const storylines = meta.narrativeLabels.length
+      ? `<b>Storylines:</b> ${meta.narrativeLabels.join(' · ')}`
+      : '';
     c.innerHTML=`
       <div class="tcard-icon">${t.icon}</div>
       <div class="tcard-title">${t.title}</div>
       <div class="tcard-stats">
-        <span><strong>${t.dateRange}</strong></span>
-        <span><strong>${t.threadCount.toLocaleString()}</strong> threads</span>
+        <span><strong>${meta.dateRange}</strong></span>
+        <span><strong>${meta.threadCount.toLocaleString()}</strong> threads</span>
         <span><strong>${nNarr}</strong> narrative${nNarr===1?'':'s'}</span>
       </div>
-      <div class="tcard-desc">${t.desc}</div>
+      <div class="tcard-desc">${storylines}</div>
       <div class="tcard-cta">${empty?'NO DATA — RUN PIPELINE FIRST':'EXPLORE →'}</div>`;
     grid.appendChild(c);
   });
@@ -1187,7 +1242,8 @@ function selectTopic(id){
   NARRATIVES=data;
   updateDataSourceToggleState();
   document.querySelector('#overview .ov-eye').textContent=`Information Disorder MindLabs · Narrative Landscape · ${t.eyeLabel}`;
-  document.querySelector('#overview .ov-sub').textContent=`${t.threadCount.toLocaleString()} threads · ${t.subs} · ${t.dateRange} · Click a narrative to explore`;
+  const _meta = _deriveTopicMeta(data);
+  document.querySelector('#overview .ov-sub').textContent=`${_meta.threadCount.toLocaleString()} threads · ${_meta.subs} · ${_meta.dateRange} · Click a narrative to explore`;
   document.getElementById('topics').classList.add('hidden','out');
   document.getElementById('overview').classList.remove('hidden','out');
   renderOverview();
@@ -1545,15 +1601,15 @@ function renderOverview(){
   // Topic-context block: surfaces TOPICS[id].desc so the user sees event framing
   // before picking a narrative. Falls back gracefully if currentTopicId is unset
   // (e.g. legacy direct-overview entry).
+  // The "Storylines in this topic" / "About this topic" box that used to
+  // live in #ov-context is removed: it duplicated the narrative titles
+  // that are already shown inside each bubble below, and the topic-level
+  // stats (threads, subs, date range) are already in the .ov-sub subtitle
+  // above. The placeholder div stays in the DOM but is cleared + hidden.
   const ctxEl = document.getElementById('ov-context');
   if (ctxEl) {
-    const t = (typeof currentTopicId !== 'undefined' && currentTopicId && TOPICS[currentTopicId]) ? TOPICS[currentTopicId] : null;
-    if (t && t.desc) {
-      ctxEl.innerHTML = '<span class="lbl">About this topic</span>' + _esc(t.desc);
-      ctxEl.style.display = 'block';
-    } else {
-      ctxEl.style.display = 'none';
-    }
+    ctxEl.innerHTML = '';
+    ctxEl.style.display = 'none';
   }
   const row=document.getElementById('brow');row.innerHTML='';
   NARRATIVES.forEach(n=>{
@@ -1845,12 +1901,10 @@ function renderDetail(n){
   // Narrative axis (spine) — the axis of contest
   addLine(svg,LW-12,ZY.spine,W-PAD_R+12,ZY.spine,'rgba(255,255,255,.18)',1.5);
   addLine(svg,LW-12,ZY.spine,W-PAD_R+12,ZY.spine,'rgba(255,255,255,.06)',6);
-  // Election day highlight
-  const elX=x2d('2026-04-12');
-  if(elX>=LW&&elX<=W){
-    addRect(svg,elX-DAY_PX/2,0,DAY_PX,CV_H,'rgba(255,218,80,.03)');
-    addLine(svg,elX,0,elX,CV_H,'rgba(255,218,80,.14)',1,'3,3');
-  }
+  // Election-day highlight removed: was hardcoded to 2026-04-12 (Hungarian
+  // election) and rendered a misleading "Election day" legend item across
+  // all corpora. There's no event-day signal in the data, so the highlight
+  // can't be data-derived — dropped entirely.
   renderAxis(svg,rawMinD,rawMaxD,W,x2d,quietZones,warp,range);
   renderHeatmap(svg,n,x2d);
 
@@ -2177,10 +2231,12 @@ function renderAxis(svg,rawMinD,rawMaxD,W,x2d,quietZones,warp,compressedRange){
     const dt=new Date(REF_DATE.getTime()+day*86400000);
     const ds=dt.toISOString().slice(0,10);
     const x=x2d(ds);if(x<LW-5||x>W+5)continue;
-    const dn=dt.getDate(),isEl=ds==='2026-04-12';
-    addLine(svg,x,ZY.spine-5,x,ZY.spine+5,isEl?'rgba(255,218,80,.6)':'rgba(255,255,255,.16)',isEl?2:1);
-    const t=svgE('text',{x,y:ZY.spine+20,fill:isEl?'#fde68a':'rgba(255,255,255,.30)','font-size':isEl?'9.5':'8.5','text-anchor':'middle','font-family':'Inter,sans-serif','font-weight':isEl?'700':'400'});
-    t.textContent=dn===1?'Apr 1':(isEl?'Apr 12 ✓':`${dn}`);svg.appendChild(t);
+    const dn=dt.getDate();
+    addLine(svg,x,ZY.spine-5,x,ZY.spine+5,'rgba(255,255,255,.16)',1);
+    const t=svgE('text',{x,y:ZY.spine+20,fill:'rgba(255,255,255,.30)','font-size':'8.5','text-anchor':'middle','font-family':'Inter,sans-serif','font-weight':'400'});
+    // First-of-month tick: show "<MonthAbbr> 1" using the tick's real month.
+    const MN_AXIS=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+    t.textContent=dn===1?`${MN_AXIS[dt.getMonth()]} 1`:`${dn}`;svg.appendChild(t);
   }
   // Render a labelled spacer band for each quiet zone — dashed top/bottom rail
   // plus a "↤ N days quiet ↦" caption so the viewer understands the timeline
@@ -2930,6 +2986,6 @@ document.addEventListener('keydown', function(e){
 // populates `NARRATIVES` and routes to the overview screen via selectTopic().
 renderTopics();
 </script>
-<div style="position:fixed;left:8px;bottom:8px;font:10px/1.2 monospace;color:rgba(255,255,255,0.25);pointer-events:none;user-select:none;z-index:1;">build 20260618-120037</div>
+<div style="position:fixed;left:8px;bottom:8px;font:10px/1.2 monospace;color:rgba(255,255,255,0.25);pointer-events:none;user-select:none;z-index:1;">build 20260622-095003</div>
 </body>
 </html>

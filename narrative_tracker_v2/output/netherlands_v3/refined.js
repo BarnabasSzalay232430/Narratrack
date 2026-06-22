@@ -1686,7 +1686,7 @@ var REFINED = [
         "after_piece_id": "n1_p6",
         "after_piece_title": "Gewonde en aanhouding na steekpartij AZC Middelburg",
         "date": "2026-05-03T09:05:14+00:00",
-        "explanation": "The narrative shifted to focus on violent incidents and protests after 2026-05-03, marking a change from initial unrest to more confrontational events.",
+        "explanation": "Before 2026-05-03, discussion focused on local unrest and opposition to the establishment of noodopvang for asielzoekers in places like Loosdrecht and IJsselstein. After 2026-05-03, attention shifted to incidents of violence at AZC locations and public demonstrations, notably the steekpartij at AZC Middelburg.",
         "explanationDiag": {
           "validated": true
         }
@@ -1697,10 +1697,9 @@ var REFINED = [
         "after_piece_id": "n1_p16",
         "after_piece_title": "Asielzoeker (30) van ophef-filmpje azc Zeist zat in…",
         "date": "2026-06-01T20:33:26+00:00",
-        "explanation": "The narrative shifted to focus on an asylum seeker involved in a controversial video, marking a change from general unrest discussions to specific incidents.",
+        "explanation": "Before 2026-06-01, discussion focused on repeated asylum applications and policy issues like fines for asielzoekers in Ter Apel. After 2026-06-01, attention shifted to criminal backgrounds of asielzoekers and Minister Van den Brink's promise to resolve the asielzoekers waitlist.",
         "explanationDiag": {
-          "validated": false,
-          "reason": "no grounding entity/date in surrounding pieces"
+          "validated": true
         }
       }
     ],
