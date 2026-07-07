@@ -40,6 +40,46 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--bg);color:var(
 .back-topics{position:absolute;top:16px;left:16px;background:var(--bg3);border:1px solid var(--br);border-radius:var(--rs);color:var(--t2);padding:6px 14px;font-size:11px;cursor:pointer;display:flex;align-items:center;gap:5px;transition:all .2s;z-index:5;}
 .back-topics:hover{background:var(--bg4);color:var(--t1);}
 
+/* ABOUT / How-it-works page — accessed via the "How does this work?" link on
+   the topics landing screen. Full-screen explainer built from the same tokens
+   as the rest of the app. Kept intentionally text-heavy; the goal is trust,
+   not showpieces. */
+#about{overflow-y:auto;padding:52px 24px 80px;}
+.about-wrap{max-width:760px;margin:0 auto;color:var(--t1);}
+.about-eye{font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--t3);margin-bottom:12px;}
+.about-h1{font-size:30px;font-weight:700;letter-spacing:-.5px;margin-bottom:10px;line-height:1.15;}
+.about-lede{font-size:14px;color:var(--t2);line-height:1.6;margin-bottom:38px;}
+.about-sec{margin-bottom:36px;}
+.about-sec h2{font-size:17px;font-weight:700;color:var(--t1);margin-bottom:12px;letter-spacing:-.2px;}
+.about-sec p{font-size:13.5px;color:var(--t2);line-height:1.7;margin-bottom:11px;}
+.about-sec p strong{color:var(--t1);font-weight:600;}
+.about-sec ul{margin:8px 0 12px 4px;padding:0;list-style:none;}
+.about-sec ul li{font-size:13.5px;color:var(--t2);line-height:1.65;padding:6px 0 6px 22px;position:relative;}
+.about-sec ul li::before{content:'▸';position:absolute;left:4px;top:6px;color:var(--t3);font-size:11px;}
+.about-callout{background:var(--bg2);border:1px solid var(--br);border-radius:10px;padding:16px 18px;margin:14px 0 6px;}
+.about-callout .lbl{font-size:9.5px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:var(--t3);margin-bottom:6px;}
+.about-callout p{font-size:13px;color:var(--t2);line-height:1.6;margin:0;}
+.about-layers{display:flex;gap:14px;margin:16px 0 4px;flex-wrap:wrap;}
+.about-layer{flex:1 1 210px;background:var(--bg2);border:1px solid var(--br);border-radius:10px;padding:14px 16px;}
+.about-layer .lbl{font-size:9.5px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:var(--post);margin-bottom:6px;}
+.about-layer .ttl{font-size:14.5px;font-weight:700;color:var(--t1);margin-bottom:6px;}
+.about-layer p{font-size:12.5px;color:var(--t2);line-height:1.55;margin:0;}
+.about-layer.mid .lbl{color:var(--research);}
+.about-layer.small .lbl{color:var(--response);}
+.about-links{display:flex;gap:14px;flex-wrap:wrap;margin-top:6px;}
+.about-links a{display:inline-flex;align-items:center;gap:6px;background:var(--bg3);border:1px solid var(--br);border-radius:var(--rs);color:var(--t1);text-decoration:none;padding:8px 14px;font-size:12px;transition:all .2s;}
+.about-links a:hover{background:var(--bg4);border-color:var(--br2);}
+.about-not{background:rgba(239,68,68,0.05);border:1px solid rgba(239,68,68,0.20);border-radius:10px;padding:16px 18px;}
+.about-not h2{color:#fca5a5;margin-bottom:10px;}
+.about-not ul li::before{color:#fca5a5;}
+
+/* "How does this work?" button pinned top-right of the topics landing.
+   Deliberately visible — first-time visitors should notice it above the fold. */
+.tp-about-btn{position:absolute;top:20px;right:24px;background:var(--bg2);border:1.5px solid var(--br2);border-radius:20px;color:var(--t1);padding:8px 18px;font-size:12px;font-weight:600;font-family:var(--font);cursor:pointer;letter-spacing:.2px;transition:all .2s;z-index:5;box-shadow:0 2px 12px rgba(0,0,0,.25);}
+.tp-about-btn::before{content:'?';display:inline-block;width:16px;height:16px;line-height:15px;border-radius:50%;background:var(--post);color:#fff;font-weight:800;font-size:11px;text-align:center;margin-right:8px;vertical-align:middle;}
+.tp-about-btn:hover{background:var(--bg3);border-color:var(--post);transform:translateY(-1px);box-shadow:0 4px 16px rgba(0,0,0,.35);}
+@media (max-width:600px){.tp-about-btn{top:12px;right:12px;padding:6px 14px;font-size:11px;}}
+
 /* OVERVIEW */
 #overview{display:flex;flex-direction:column;align-items:center;justify-content:flex-start;gap:0;padding:32px 24px 40px;overflow-y:auto;}
 .ov-eye{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--t3);margin-bottom:10px;}
@@ -662,42 +702,150 @@ body[data-mode="user"] .mut-num{display:none!important;}
 <!-- Each narratives.js file sets `var NARRATIVES = [...]`. We load them in
      sequence and capture into namespaced globals so the user can switch
      between topics from the new #topics screen. -->
-<script src="narrative_tracker_v2/output/hungary/narratives.js?v=20260622-105720"></script>
+<script src="narrative_tracker_v2/output/hungary/narratives.js?v=20260623-114853"></script>
 <script>var NARRATIVES_HU = NARRATIVES;</script>
-<script src="narrative_tracker_v2/output/iran/narratives.js?v=20260622-105720"></script>
+<script src="narrative_tracker_v2/output/iran/narratives.js?v=20260623-114853"></script>
 <script>var NARRATIVES_IRAN = NARRATIVES;</script>
-<script src="narrative_tracker_v2/output/netherlands_v3/narratives.js?v=20260622-105720"></script>
+<script src="narrative_tracker_v2/output/netherlands_v3/narratives.js?v=20260623-114853"></script>
 <script>var NARRATIVES_NL = NARRATIVES;</script>
+
+
 <!-- Optional refined data — only present after running `python -m
      narrative_tracker_v2.refine --output-dir output/<corpus> --apply-merge
      --apply-prune`. If the file doesn't exist, the script tag fails silently
      (a console 404 is harmless). The capture-step below namespaces whichever
      globals DID get set, so a missing file leaves the baseline data intact. -->
-<script src="narrative_tracker_v2/output/hungary/refined.js?v=20260622-105720" onerror=""></script>
+<script src="narrative_tracker_v2/output/hungary/refined.js?v=20260623-114853" onerror=""></script>
 <script>if (typeof REFINED !== 'undefined') { var NARRATIVES_HU_REFINED = REFINED; REFINED = undefined; }</script>
-<script src="narrative_tracker_v2/output/hungary/refinement_log.js?v=20260622-105720" onerror=""></script>
+<script src="narrative_tracker_v2/output/hungary/refinement_log.js?v=20260623-114853" onerror=""></script>
 <script>if (typeof REFINEMENT_LOG !== 'undefined') { var REFINEMENT_LOG_HU = REFINEMENT_LOG; REFINEMENT_LOG = undefined; }</script>
-<script src="narrative_tracker_v2/output/iran/refined.js?v=20260622-105720" onerror=""></script>
+<script src="narrative_tracker_v2/output/iran/refined.js?v=20260623-114853" onerror=""></script>
 <script>if (typeof REFINED !== 'undefined') { var NARRATIVES_IRAN_REFINED = REFINED; REFINED = undefined; }</script>
-<script src="narrative_tracker_v2/output/iran/refinement_log.js?v=20260622-105720" onerror=""></script>
+<script src="narrative_tracker_v2/output/iran/refinement_log.js?v=20260623-114853" onerror=""></script>
 <script>if (typeof REFINEMENT_LOG !== 'undefined') { var REFINEMENT_LOG_IRAN = REFINEMENT_LOG; REFINEMENT_LOG = undefined; }</script>
-<script src="narrative_tracker_v2/output/netherlands_v3/refined.js?v=20260622-105720" onerror=""></script>
+<script src="narrative_tracker_v2/output/netherlands_v3/refined.js?v=20260623-114853" onerror=""></script>
 <script>if (typeof REFINED !== 'undefined') { var NARRATIVES_NL_REFINED = REFINED; REFINED = undefined; }</script>
-<script src="narrative_tracker_v2/output/netherlands_v3/refinement_log.js?v=20260622-105720" onerror=""></script>
+<script src="narrative_tracker_v2/output/netherlands_v3/refinement_log.js?v=20260623-114853" onerror=""></script>
 <script>if (typeof REFINEMENT_LOG !== 'undefined') { var REFINEMENT_LOG_NL = REFINEMENT_LOG; REFINEMENT_LOG = undefined; }</script>
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
-<meta name="build-version" content="20260622-105720">
-<script>(function(){var B="20260622-105720";try{var u=new URL(location.href);if(u.searchParams.get("v")!==B){u.searchParams.set("v",B);location.replace(u.toString());}}catch(e){}})();</script>
+<meta name="build-version" content="20260623-114853">
+<script>(function(){var B="20260623-114853";try{var u=new URL(location.href);if(u.searchParams.get("v")!==B){u.searchParams.set("v",B);location.replace(u.toString());}}catch(e){}})();</script>
 </head>
 <body data-mode="user">
 <div id="app">
 <div id="topics" class="screen">
+  <button class="tp-about-btn" onclick="goAbout()">How does this work?</button>
   <div class="tp-eye">Information Disorder MindLabs</div>
   <div class="tp-ttl">Three narrative landscapes from Reddit · v3</div>
   <div class="tp-sub">Each topic clusters Reddit threads into auto-discovered narratives. Pick one to explore.</div>
   <div class="tp-grid" id="tp-grid"></div>
+</div>
+<div id="about" class="screen hidden out">
+  <button class="back-topics" onclick="backFromAbout()">← Topics</button>
+  <div class="about-wrap">
+    <div class="about-eye">How the Narrative Tracker works</div>
+    <h1 class="about-h1">How the tracker turns Reddit threads into narratives.</h1>
+    <p class="about-lede">This page walks through the steps the tracker takes on a corpus of Reddit threads — from raw text to the narratives you see. Everything on this site was produced automatically, so it helps to know what the software actually did before reading the results.</p>
+
+    <div class="about-sec">
+      <h2>Step 1 — Reading each thread as meaning, not words</h2>
+      <p>Each Reddit thread (title + body) is passed through a <strong>sentence-embedding model</strong>. The model reads the text and produces a numerical fingerprint that captures roughly what the thread is about. Threads that mean similar things get similar fingerprints, even if they use different words or different languages.</p>
+      <p>Nothing keyword-based is happening here. The tracker doesn't look for specific words — it works from the meaning the model extracts.</p>
+    </div>
+
+    <div class="about-sec">
+      <h2>Step 2 — Grouping threads by fingerprint distance <span style="font-size:11px;font-weight:600;letter-spacing:1.4px;text-transform:uppercase;color:var(--response);margin-left:8px;">math, no AI</span></h2>
+      <p>Once every thread has a fingerprint, the tracker measures how close each fingerprint is to every other. Threads whose fingerprints are close get merged into small groups. Groups that are close to each other get merged into larger groups. This is <strong>hierarchical agglomerative clustering (HAC)</strong> — building a tree from the finest groupings up to the widest.</p>
+      <p>The tracker then cuts the tree at a chosen distance threshold. What's above the cut becomes a <strong>narrative</strong>. Smaller groupings inside each narrative become <strong>pieces</strong>.</p>
+      <p><strong>This grouping step is strictly mathematical.</strong> No AI decides which threads belong together — the outcome is fully determined by the fingerprint distances and the threshold. Two people running the same code on the same input get the exact same narrative groupings.</p>
+    </div>
+
+    <div class="about-sec">
+      <h2>The three layers you'll see</h2>
+      <div class="about-layers">
+        <div class="about-layer">
+          <div class="lbl">Layer 1</div>
+          <div class="ttl">Narrative</div>
+          <p>A group of Reddit threads whose fingerprints sit close together. Typically dozens of threads spanning a few weeks.</p>
+        </div>
+        <div class="about-layer mid">
+          <div class="lbl">Layer 2</div>
+          <div class="ttl">Phase</div>
+          <p>A time-slice of a narrative, cut at moments where the tracker detects the conversation shifting.</p>
+        </div>
+        <div class="about-layer small">
+          <div class="lbl">Layer 3</div>
+          <div class="ttl">Piece</div>
+          <p>A tight sub-cluster of a few Reddit threads within a narrative — usually about one specific moment.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="about-sec">
+      <h2>Step 3 — Detecting phase boundaries <span style="font-size:11px;font-weight:600;letter-spacing:1.4px;text-transform:uppercase;color:var(--response);margin-left:8px;">math, no AI</span></h2>
+      <p>Inside each narrative, the tracker orders the threads chronologically and runs a <strong>change-point detection</strong> algorithm over the sequence. The algorithm is statistical — it scans for moments where the shape of the conversation changes (the mix of what's being discussed, the volume of posting, the fingerprints themselves). Those moments become phase boundaries.</p>
+      <p>If nothing crosses the detection threshold, the narrative stays as one long phase. Detecting <em>where</em> the phase boundaries fall is math; the short explanation you see attached to each boundary is written by an LLM (see below).</p>
+    </div>
+
+    <div class="about-sec">
+      <h2>Step 4 — Checking that a narrative holds together</h2>
+      <p>Clustering is imperfect. To catch groupings that don't hold up, every candidate narrative goes through two checks:</p>
+      <ul>
+        <li><strong>A geometric check</strong> <span style="color:var(--response);font-size:11px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;">— math</span> — for each thread in the narrative, the tracker measures how far its fingerprint is from the narrative's centre. Threads that sit far from the centre are flagged.</li>
+        <li><strong>A language-model judge</strong> <span style="color:var(--research);font-size:11px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;">— LLM</span> — a separate model reads a sample of the narrative's threads and rates how coherent the grouping looks. Narratives that fail get dropped; borderline ones get a low-confidence marker.</li>
+      </ul>
+      <p>You're seeing the narratives that survived both checks.</p>
+    </div>
+
+    <div class="about-sec">
+      <h2>Step 5 — Writing the labels, summaries, and story arcs <span style="font-size:11px;font-weight:600;letter-spacing:1.4px;text-transform:uppercase;color:var(--research);margin-left:8px;">this is where the LLM writes</span></h2>
+      <p>At this point the tracker has narratives, phases, and pieces — but they don't yet have human-readable titles or explanations. Everything the tracker <em>writes for you to read</em> is generated by a language model reading the threads inside each group. Specifically:</p>
+      <ul>
+        <li><strong>Narrative titles</strong> (the short label you see on each bubble on the overview) — LLM-written from the narrative's central threads.</li>
+        <li><strong>Narrative descriptions and short story arcs</strong> (the paragraph at the top of each storyline view) — LLM-written from the narrative's contents.</li>
+        <li><strong>Piece headlines and main claims</strong> — LLM-written per piece, from the Reddit threads inside it.</li>
+        <li><strong>Change-point explanations</strong> (the popup on the sky-blue chip at each phase boundary, describing what shifted) — LLM-written from the threads on either side of the boundary.</li>
+        <li><strong>Key people, organisations, and places</strong> shown on the storyline view — extracted from the raw thread text using a named-entity recognition model (not the same as the labelling LLM, but also a machine-learned model, not hand-curated).</li>
+      </ul>
+      <p style="margin-top:8px;">In short: <strong>the grouping is math, the reading-material is LLM-generated.</strong> If you want to check any label or explanation, click into the underlying threads — every LLM summary can be traced back to the actual Reddit posts it was written from.</p>
+    </div>
+
+    <div class="about-sec">
+      <h2>What the piece markers mean</h2>
+      <p>Not every piece inside a narrative fits the narrative equally well. The tracker marks two cases:</p>
+      <ul>
+        <li><strong>Tangential pieces</strong> (green) — the piece's fingerprint is <em>further from the narrative's centroid</em> than the other pieces. That's all this marker says. It doesn't mean the piece is off-topic, opposing the narrative, or belongs somewhere else — just that it sits at the edge of the fingerprint cloud rather than the centre. Reading the piece is the only way to see what that distance actually reflects in the text.</li>
+        <li><strong>Discussion pieces</strong> (purple) — the piece was connected to the narrative through a <em>comment inside the thread</em> rather than the thread's title/body. So the top-level post might not obviously be about the narrative, but a comment inside it discusses the same topic. Useful because Reddit conversations often diverge from the headline.</li>
+      </ul>
+    </div>
+
+    <div class="about-sec">
+      <h2>Low-confidence narrative labels</h2>
+      <p>Each narrative on the overview has a short label. That label is generated by a language model from the narrative's most representative thread. If even that most-representative thread sits unusually far from the narrative's centre, a small <strong>?</strong> pill appears next to the label — a warning that the label is a rough summary and the group is looser than usual.</p>
+    </div>
+
+    <div class="about-sec about-not">
+      <h2>What this is not</h2>
+      <ul>
+        <li>Not a fact-checker — it shows you what was said, not whether it was true.</li>
+        <li>Not a judgement of intent — a narrative here is a group of similar-sounding threads, not necessarily a coordinated or misleading one.</li>
+        <li>Not a live feed — each corpus is a fixed scrape from a specific date range.</li>
+        <li>Not language-universal — corpora here cover English, Hungarian, and Dutch; other languages would need their own testing.</li>
+      </ul>
+    </div>
+
+    <div class="about-sec">
+      <h2>Where to go deeper</h2>
+      <p>The full technical write-up covers every design decision, the numbers, and the limitations.</p>
+      <div class="about-links">
+        <a href="https://github.com/BredaUniversityADSAI/2025-26-graduation-BarnabasSzalay232430" target="_blank" rel="noopener">Source code (GitHub)</a>
+        <a href="https://github.com/BredaUniversityADSAI/2025-26-graduation-BarnabasSzalay232430/blob/main/Information%20Disorder%20Mindlabs/QUICKSTART.md" target="_blank" rel="noopener">Run it yourself (QUICKSTART)</a>
+        <a href="https://github.com/BredaUniversityADSAI/2025-26-graduation-BarnabasSzalay232430/blob/main/Information%20Disorder%20Mindlabs/SCRAPER_GUIDE.md" target="_blank" rel="noopener">Build a corpus (SCRAPER_GUIDE)</a>
+      </div>
+    </div>
+  </div>
 </div>
 <div id="overview" class="screen hidden out">
   <button class="back-topics" onclick="backToTopics()">← Topics</button>
@@ -990,10 +1138,11 @@ var TOUR_STEPS = [
   },
   {
     title: 'You\'re ready',
-    body: 'That\'s the layout: <b>Topic → Storyline → Phase → Piece</b>, with a "see everything at once" option on the storyline view. Use the <b>← Back button</b> at the top-left of each screen to step back up a level, or the <b>arrow keys</b> to jump between phases. The <b>?</b> button (bottom-right) brings this tour back any time. <br><br>Have a look around!',
+    body: 'That\'s the layout: <b>Topic → Storyline → Phase → Piece</b>, with a "see everything at once" option on the storyline view. Use the <b>← Back button</b> at the top-left of each screen to step back up a level, or the <b>arrow keys</b> to jump between phases. The <b>?</b> button (bottom-right) brings this tour back any time. <br><br>I\'ve brought you back to the <b>landing page</b>. If you want the deeper story — how the tracker actually turns Reddit threads into these narratives, and where AI is (and isn\'t) involved — press the <b>? How does this work?</b> button in the top-right when you\'re ready. Otherwise, pick a topic and have a look around!',
     entryAction: function(){
       try { if (typeof closeMutationPopup === 'function') closeMutationPopup(); } catch(e) {}
       try { if (typeof closePanel === 'function') closePanel(); } catch(e) {}
+      try { if (typeof _tourResetToTopics === 'function') _tourResetToTopics(); } catch(e) {}
     },
   },
 ];
@@ -1246,7 +1395,7 @@ const TOPICS = {
     refinedData: (typeof NARRATIVES_NL_REFINED !== 'undefined') ? NARRATIVES_NL_REFINED : null,
     refinementLog: (typeof REFINEMENT_LOG_NL !== 'undefined') ? REFINEMENT_LOG_NL : null,
   },
-};
+  //   // };
 // Resolver: picks the right data set based on body[data-source]. Used by
 // selectTopic + renderTopics + the data-source toggle.
 function getActiveData(topicId) {
@@ -1371,6 +1520,16 @@ function backToTopics(){
   document.getElementById('overview').classList.add('hidden','out');
   document.getElementById('topics').classList.remove('hidden','out');
   currentTopicId=null;
+}
+
+function goAbout(){
+  document.getElementById('topics').classList.add('hidden','out');
+  document.getElementById('about').classList.remove('hidden','out');
+  document.getElementById('about').scrollTop=0;
+}
+function backFromAbout(){
+  document.getElementById('about').classList.add('hidden','out');
+  document.getElementById('topics').classList.remove('hidden','out');
 }
 
 
@@ -3104,6 +3263,6 @@ document.addEventListener('keydown', function(e){
 // populates `NARRATIVES` and routes to the overview screen via selectTopic().
 renderTopics();
 </script>
-<div style="position:fixed;left:8px;bottom:8px;font:10px/1.2 monospace;color:rgba(255,255,255,0.25);pointer-events:none;user-select:none;z-index:1;">build 20260622-105720</div>
+<div style="position:fixed;left:8px;bottom:8px;font:10px/1.2 monospace;color:rgba(255,255,255,0.25);pointer-events:none;user-select:none;z-index:1;">build 20260623-114853</div>
 </body>
 </html>
