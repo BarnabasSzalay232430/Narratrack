@@ -1395,7 +1395,7 @@ const TOPICS = {
     refinedData: (typeof NARRATIVES_NL_REFINED !== 'undefined') ? NARRATIVES_NL_REFINED : null,
     refinementLog: (typeof REFINEMENT_LOG_NL !== 'undefined') ? REFINEMENT_LOG_NL : null,
   },
-  //   // };
+};
 // Resolver: picks the right data set based on body[data-source]. Used by
 // selectTopic + renderTopics + the data-source toggle.
 function getActiveData(topicId) {
@@ -1531,6 +1531,33 @@ function backFromAbout(){
   document.getElementById('about').classList.add('hidden','out');
   document.getElementById('topics').classList.remove('hidden','out');
 }
+
+// Reset scroll to top whenever a screen becomes visible. Screens keep their
+// own scrollTop across .hidden toggles, which is confusing when you drill
+// into a phase, come back, and land mid-page. One observer covers every
+// current and future screen-swap site — no need to sprinkle scrollTop=0.
+(function(){
+  var reset = function(el){
+    if (!el) return;
+    el.scrollTop = 0;
+    // Some inner scroll containers also need resetting (detail's canvas wrap,
+    // context panels). Idempotent when they don't exist for a given screen.
+    var cwrap = el.querySelector('#cwrap'); if (cwrap) cwrap.scrollTop = 0;
+    var ctx = el.querySelector('.ctx-body'); if (ctx) ctx.scrollTop = 0;
+  };
+  var obs = new MutationObserver(function(muts){
+    muts.forEach(function(m){
+      if (m.type !== 'attributes' || m.attributeName !== 'class') return;
+      var t = m.target;
+      if (!t.classList.contains('screen')) return;
+      // Fire only on the "just became visible" transition.
+      if (!t.classList.contains('hidden')) reset(t);
+    });
+  });
+  document.querySelectorAll('.screen').forEach(function(s){
+    obs.observe(s, { attributes: true, attributeFilter: ['class'] });
+  });
+})();
 
 
 // ══════════════════════════════════════════════════════════
