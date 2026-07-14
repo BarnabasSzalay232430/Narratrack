@@ -75,6 +75,22 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--bg);color:var(
 .about-not h2{color:#fca5a5;margin-bottom:10px;}
 .about-not ul li::before{color:#fca5a5;}
 
+/* Step 0 — corpus provenance table. Horizontally scrolls on narrow screens
+   so the page body itself never scrolls sideways. */
+.corpus-tbl-wrap{overflow-x:auto;margin:16px 0 6px;border:1px solid var(--br);border-radius:10px;}
+.corpus-tbl{border-collapse:collapse;width:100%;min-width:560px;font-size:12.5px;}
+.corpus-tbl th,.corpus-tbl td{text-align:left;padding:11px 14px;vertical-align:top;border-bottom:1px solid var(--br);}
+.corpus-tbl thead th{background:var(--bg2);color:var(--t2);font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;white-space:nowrap;}
+.corpus-tbl tbody tr:last-child td{border-bottom:none;}
+.corpus-tbl tbody tr:hover td{background:rgba(90,140,200,0.04);}
+.corpus-tbl .cx-name{color:var(--t1);font-weight:700;font-size:13px;white-space:nowrap;}
+.corpus-tbl .cx-name span{display:block;font-weight:500;font-size:10.5px;color:var(--t3);letter-spacing:.3px;margin-top:2px;}
+.corpus-tbl .cx-sub{color:var(--t2);line-height:1.5;}
+.corpus-tbl .cx-anch code{color:var(--post);background:rgba(249,115,22,0.08);border-radius:4px;padding:1px 5px;font-size:11px;font-family:var(--font);white-space:nowrap;display:inline-block;margin:2px 3px 2px 0;}
+.corpus-tbl .cx-keep{white-space:nowrap;color:var(--t1);font-weight:600;}
+.corpus-tbl .cx-keep span{display:block;font-weight:500;font-size:10.5px;color:var(--response);margin-top:2px;}
+.corpus-note{font-size:11.5px;color:var(--t3);line-height:1.55;margin-top:4px;font-style:italic;}
+
 /* "How does this work?" button pinned top-right of the topics landing.
    Deliberately visible — first-time visitors should notice it above the fold. */
 .tp-about-btn{position:absolute;top:20px;right:24px;background:var(--bg2);border:1.5px solid var(--br2);border-radius:20px;color:var(--t1);padding:8px 18px;font-size:12px;font-weight:600;font-family:var(--font);cursor:pointer;letter-spacing:.2px;transition:all .2s;z-index:5;box-shadow:0 2px 12px rgba(0,0,0,.25);}
@@ -712,12 +728,26 @@ body[data-mode="user"] .mut-num{display:none!important;}
 <!-- Each narratives.js file sets `var NARRATIVES = [...]`. We load them in
      sequence and capture into namespaced globals so the user can switch
      between topics from the new #topics screen. -->
-<script src="narrative_tracker_v2/output/hungary/narratives.js?v=20260709-074022"></script>
+<script src="narrative_tracker_v2/output/hungary/narratives.js?v=20260714-065936"></script>
 <script>var NARRATIVES_HU = NARRATIVES;</script>
-<script src="narrative_tracker_v2/output/iran/narratives.js?v=20260709-074022"></script>
+<script src="narrative_tracker_v2/output/iran/narratives.js?v=20260714-065936"></script>
 <script>var NARRATIVES_IRAN = NARRATIVES;</script>
-<script src="narrative_tracker_v2/output/netherlands_v3/narratives.js?v=20260709-074022"></script>
+<script src="narrative_tracker_v2/output/netherlands_v3/narratives.js?v=20260714-065936"></script>
 <script>var NARRATIVES_NL = NARRATIVES;</script>
+<!-- register_corpus:nl_multi START -->
+<script src="narrative_tracker_v2/output/nl_multi/narratives.js"></script>
+<script>if (typeof NARRATIVES !== 'undefined') { var NARRATIVES_NL_MULTI = NARRATIVES; }</script>
+<!-- register_corpus:nl_multi END -->
+
+<!-- register_corpus:hu_multi START -->
+<script src="narrative_tracker_v2/output/hu_multi/narratives.js"></script>
+<script>if (typeof NARRATIVES !== 'undefined') { var NARRATIVES_HU_MULTI = NARRATIVES; }</script>
+<!-- register_corpus:hu_multi END -->
+
+
+
+
+
 
 
 
@@ -728,23 +758,23 @@ body[data-mode="user"] .mut-num{display:none!important;}
      --apply-prune`. If the file doesn't exist, the script tag fails silently
      (a console 404 is harmless). The capture-step below namespaces whichever
      globals DID get set, so a missing file leaves the baseline data intact. -->
-<script src="narrative_tracker_v2/output/hungary/refined.js?v=20260709-074022" onerror=""></script>
+<script src="narrative_tracker_v2/output/hungary/refined.js?v=20260714-065936" onerror=""></script>
 <script>if (typeof REFINED !== 'undefined') { var NARRATIVES_HU_REFINED = REFINED; REFINED = undefined; }</script>
-<script src="narrative_tracker_v2/output/hungary/refinement_log.js?v=20260709-074022" onerror=""></script>
+<script src="narrative_tracker_v2/output/hungary/refinement_log.js?v=20260714-065936" onerror=""></script>
 <script>if (typeof REFINEMENT_LOG !== 'undefined') { var REFINEMENT_LOG_HU = REFINEMENT_LOG; REFINEMENT_LOG = undefined; }</script>
-<script src="narrative_tracker_v2/output/iran/refined.js?v=20260709-074022" onerror=""></script>
+<script src="narrative_tracker_v2/output/iran/refined.js?v=20260714-065936" onerror=""></script>
 <script>if (typeof REFINED !== 'undefined') { var NARRATIVES_IRAN_REFINED = REFINED; REFINED = undefined; }</script>
-<script src="narrative_tracker_v2/output/iran/refinement_log.js?v=20260709-074022" onerror=""></script>
+<script src="narrative_tracker_v2/output/iran/refinement_log.js?v=20260714-065936" onerror=""></script>
 <script>if (typeof REFINEMENT_LOG !== 'undefined') { var REFINEMENT_LOG_IRAN = REFINEMENT_LOG; REFINEMENT_LOG = undefined; }</script>
-<script src="narrative_tracker_v2/output/netherlands_v3/refined.js?v=20260709-074022" onerror=""></script>
+<script src="narrative_tracker_v2/output/netherlands_v3/refined.js?v=20260714-065936" onerror=""></script>
 <script>if (typeof REFINED !== 'undefined') { var NARRATIVES_NL_REFINED = REFINED; REFINED = undefined; }</script>
-<script src="narrative_tracker_v2/output/netherlands_v3/refinement_log.js?v=20260709-074022" onerror=""></script>
+<script src="narrative_tracker_v2/output/netherlands_v3/refinement_log.js?v=20260714-065936" onerror=""></script>
 <script>if (typeof REFINEMENT_LOG !== 'undefined') { var REFINEMENT_LOG_NL = REFINEMENT_LOG; REFINEMENT_LOG = undefined; }</script>
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
-<meta name="build-version" content="20260709-074022">
-<script>(function(){var B="20260709-074022";try{var u=new URL(location.href);if(u.searchParams.get("v")!==B){u.searchParams.set("v",B);location.replace(u.toString());}}catch(e){}})();</script>
+<meta name="build-version" content="20260714-065936">
+<script>(function(){var B="20260714-065936";try{var u=new URL(location.href);if(u.searchParams.get("v")!==B){u.searchParams.set("v",B);location.replace(u.toString());}}catch(e){}})();</script>
 </head>
 <body data-mode="user">
 <div id="app">
@@ -761,6 +791,40 @@ body[data-mode="user"] .mut-num{display:none!important;}
     <div class="about-eye">How the Narrative Tracker works</div>
     <h1 class="about-h1">How the tracker turns Reddit threads into narratives.</h1>
     <p class="about-lede">This page walks through the steps the tracker takes on a corpus of Reddit threads — from raw text to the narratives you see.</p>
+
+    <div class="about-sec">
+      <h2>Step 0 — Collecting the threads <span style="font-size:11px;font-weight:600;letter-spacing:1.4px;text-transform:uppercase;color:var(--post);margin-left:8px;">the only keyword step</span></h2>
+      <p>Every narrative on this site was built from real Reddit threads pulled by a scraper. For each topic we picked a set of <strong>subreddits</strong> and a list of <strong>anchor words</strong> that a thread had to contain. A thread only enters the corpus if it passes both gates — subreddit <em>and</em> anchor. This is the one and only place the system looks at specific words; everything from Step 1 onward works from meaning, not keywords.</p>
+      <p>The three corpora were scoped deliberately differently — a tight national election, a wide multi-perspective war, and a narrow domestic issue — to show the same machine handling different shapes of story:</p>
+      <div class="corpus-tbl-wrap">
+        <table class="corpus-tbl">
+          <thead>
+            <tr><th>Corpus</th><th>Subreddits</th><th>Anchor words (thread must contain one)</th><th>Threads kept</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="cx-name">Hungary election<span>2026</span></td>
+              <td class="cx-sub">europe, hungary, news, worldnews</td>
+              <td class="cx-anch"><code>orbán</code><code>magyar</code><code>hungary</code><code>hungarian</code><code>fidesz</code></td>
+              <td class="cx-keep">535<span>of 3,121 · 17%</span></td>
+            </tr>
+            <tr>
+              <td class="cx-name">Iran war<span>2026</span></td>
+              <td class="cx-sub">16 subreddits — worldnews, news, iran, iranian, Israel, Lebanon, geopolitics, CredibleDefense, AntiWar, Conservative, neoliberal… <em style="color:var(--t3);">(pro-Israel, pro-Iran, analyst &amp; US left/right, deliberately mixed)</em></td>
+              <td class="cx-anch"><code>iran</code><code>tehran</code><code>khamenei</code><code>natanz</code><code>fordow</code><code>hormuz</code><code>irgc</code><code>hezbollah</code><code>israel</code> <em style="color:var(--t3);font-size:11px;">+ meaning-based search</em></td>
+              <td class="cx-keep">1,369<span>of 5,263 · 26%</span></td>
+            </tr>
+            <tr>
+              <td class="cx-name">Netherlands asylum<span>2026</span></td>
+              <td class="cx-sub">nederland, thenetherlands</td>
+              <td class="cx-anch"><code>asielzoeker</code><code>AZC</code><code>COA</code><code>vluchteling</code> <em style="color:var(--t3);font-size:11px;">(Dutch — domestic topic)</em></td>
+              <td class="cx-keep">151<span>of 26,303 · 0.6%</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="corpus-note">"Threads kept" is the share that passed both gates. The low Netherlands figure isn't a failure — it's the filter rejecting tens of thousands of off-topic Dutch threads to keep only the asylum conversation. Each corpus is a fixed scrape from a set date range, not a live feed and not the whole of Reddit. The full parameter list — exact date windows, keyword lists, and regex — is in the <a href="https://github.com/BredaUniversityADSAI/2025-26-graduation-BarnabasSzalay232430/blob/main/Information%20Disorder%20Mindlabs/SCRAPER_GUIDE.md" target="_blank" rel="noopener" style="color:var(--official);">scraper guide</a>.</p>
+    </div>
 
     <div class="about-sec">
       <h2>Step 1 — Reading each thread as meaning, not words</h2>
@@ -1409,6 +1473,28 @@ const TOPICS = {
     refinedData: (typeof NARRATIVES_NL_REFINED !== 'undefined') ? NARRATIVES_NL_REFINED : null,
     refinementLog: (typeof REFINEMENT_LOG_NL !== 'undefined') ? REFINEMENT_LOG_NL : null,
   },
+  // <!-- register_corpus:hu_multi START -->
+  hu_multi: {
+    id: 'hu_multi',
+    icon: '🇭🇺',
+    title: 'Hungary 2026 (multilingual embedder)',
+    eyeLabel: 'Hungary 2026 (multilingual embedder)',
+    baselineData: (typeof NARRATIVES_HU_MULTI !== 'undefined') ? NARRATIVES_HU_MULTI : [],
+    refinedData: null,
+    refinementLog: null,
+  },
+  // <!-- register_corpus:hu_multi END -->
+  // <!-- register_corpus:nl_multi START -->
+  nl_multi: {
+    id: 'nl_multi',
+    icon: '🇳🇱',
+    title: 'NL Asylum 2026 (multilingual embedder)',
+    eyeLabel: 'NL Asylum 2026 (multilingual embedder)',
+    baselineData: (typeof NARRATIVES_NL_MULTI !== 'undefined') ? NARRATIVES_NL_MULTI : [],
+    refinedData: null,
+    refinementLog: null,
+  },
+  // <!-- register_corpus:nl_multi END -->
 };
 // Resolver: picks the right data set based on body[data-source]. Used by
 // selectTopic + renderTopics + the data-source toggle.
@@ -2631,6 +2717,36 @@ function pieceWidth(p){
   if(p.kind==='post')return 180;
   return _PWIDTHS[Math.min(4,pieceSpanDays(p))];
 }
+// Piece cards had two text lines: a bold title (pipeline pre-truncated to
+// ~50 chars ending with …) plus an italic "claim" below that was really
+// just the untruncated version of the same title in quotes. That read as
+// duplicate. We now render one headline line only — preferring the full
+// `claim` text when it's just a longer form of `title`, or picking whichever
+// carries more information. CSS on .cp-t / .cc-t handles overflow inside
+// the fixed card height.
+function _pickHeadline(titleSrc, claimSrc){
+  const t = (titleSrc || '').trim();
+  const c = (claimSrc || '').replace(/^"+|"+$/g,'').trim();
+  let picked = t;
+  if (!c) picked = t;
+  else if (!t) picked = c;
+  else {
+    // If title (minus trailing ellipsis) is a prefix of claim, claim is just
+    // the un-truncated title → prefer claim (the whole title).
+    const tNoEllipsis = t.replace(/[…]+$/,'').toLowerCase();
+    const cLower = c.toLowerCase();
+    if (tNoEllipsis.length >= 12 && cLower.startsWith(tNoEllipsis)) picked = c;
+    else picked = c.length >= t.length ? c : t;
+  }
+  // Cap at a length the fixed-height card can hold without overflowing —
+  // 130 chars ≈ 3-4 wrapped lines inside a 118px card. Longer strings
+  // could push the card past its slot height and cause the greedy
+  // binpacking layout to over-allocate rows.
+  const CAP = 130;
+  if (picked.length > CAP) picked = picked.slice(0, CAP).replace(/\s+\S*$/, '') + '…';
+  return picked;
+}
+
 function makePost(p,n){
   const el=document.createElement('div');el.className='card cp';el.dataset.piece=p.id;
   const isTangential=p.roleType==='tangential';
@@ -2638,12 +2754,12 @@ function makePost(p,n){
   const isTranslated=p.lang&&p.lang!=='en';
   const titleSrc=isTranslated?pickEn(p.title,p.titleEn):(p.title||(p.claim||'').replace(/^"|"$/g,'').slice(0,60));
   const claimSrc=isTranslated?pickEn((p.claim||'').replace(/^"|"$/g,''),(p.claimEn||'').replace(/^"|"$/g,'')):((p.claim||'').replace(/^"|"$/g,''));
-  const claim=claimSrc.length>90?claimSrc.slice(0,90)+'…':claimSrc;
+  const headline = _pickHeadline(titleSrc, claimSrc);
   const tagHtml=isTangential
     ?`<span class="cp-tag">↗ Tangential · single</span>`
     :`<span class="cp-tag">▲ Single post</span>`;
   const langIcon=isTranslated?`<span class="cc-icon" title="Translated from ${p.langName||p.lang.toUpperCase()} to English">🌐</span>`:'';
-  el.innerHTML=`${dbBadge(p)}<div class="cp-h">${tagHtml}<span class="cp-cnt">${p.count}</span>${langIcon}<span class="cp-plat">${p.platforms.join('')}</span></div><div class="cp-t">${titleSrc}</div><div class="cp-q">"${claim}"</div><div class="cp-f"><span>${fmtDate(p.date)} 2026</span><span class="cp-x">Open →</span></div>`;
+  el.innerHTML=`${dbBadge(p)}<div class="cp-h">${tagHtml}<span class="cp-cnt">${p.count}</span>${langIcon}<span class="cp-plat">${p.platforms.join('')}</span></div><div class="cp-t">${headline}</div><div class="cp-f"><span>${fmtDate(p.date)} 2026</span><span class="cp-x">Open →</span></div>`;
   el.onclick=()=>openClusterPanel(p,n);return el;
 }
 function makeCluster(p,n){
@@ -2657,7 +2773,7 @@ function makeCluster(p,n){
   const isTranslated=p.lang&&p.lang!=='en';
   const titleSrc=isTranslated?pickEn(p.title,p.titleEn):(p.title||(p.claim||'').replace(/^"|"$/g,'').slice(0,60));
   const claimSrc=isTranslated?pickEn((p.claim||'').replace(/^"|"$/g,''),(p.claimEn||'').replace(/^"|"$/g,'')):((p.claim||'').replace(/^"|"$/g,''));
-  const claim=claimSrc.length>90?claimSrc.slice(0,90)+'…':claimSrc;
+  const headline = _pickHeadline(titleSrc, claimSrc);
   const tagHtml=isTangential
     ?`<span class="cc-rl rl-tangential" title="This piece's centroid is unusually far from the narrative's centroid relative to the other pieces in this narrative — it may be a sub-frame or off-topic drift.">↗ Tangential</span>`
     :(isDiscussion
@@ -2671,7 +2787,7 @@ function makeCluster(p,n){
   const shapeMark=isTangential?'<span class="cc-fin-up" aria-hidden="true"></span>':(isDiscussion?'<span class="cc-tail-bottom" aria-hidden="true"></span>':'');
   // Inline subtitle on comment-driven cards — clarifies the badge meaning without requiring hover.
   const subHtml=isDiscussion?'<div class="cc-sub">Comments connect — headlines don’t</div>':'';
-  el.innerHTML=`${dbBadge(p)}${shapeMark}<div class="cc-h"><span class="cc-cnt">${p.count}</span>${tagHtml}${tcntHtml}${langIcon}<span class="cc-plat">${p.platforms.join('')}</span></div><div class="cc-t">${titleSrc}</div><div class="cc-q">"${claim}"</div>${subHtml}<div class="cc-f"><span>${p.dateRange}</span><span class="cc-x">Open →</span></div>`;
+  el.innerHTML=`${dbBadge(p)}${shapeMark}<div class="cc-h"><span class="cc-cnt">${p.count}</span>${tagHtml}${tcntHtml}${langIcon}<span class="cc-plat">${p.platforms.join('')}</span></div><div class="cc-t">${headline}</div>${subHtml}<div class="cc-f"><span>${p.dateRange}</span><span class="cc-x">Open →</span></div>`;
   el.onclick=()=>openClusterPanel(p,n);return el;
 }
 
@@ -3315,6 +3431,6 @@ document.addEventListener('keydown', function(e){
 // populates `NARRATIVES` and routes to the overview screen via selectTopic().
 renderTopics();
 </script>
-<div style="position:fixed;left:8px;bottom:8px;font:10px/1.2 monospace;color:rgba(255,255,255,0.25);pointer-events:none;user-select:none;z-index:1;">build 20260709-074022</div>
+<div style="position:fixed;left:8px;bottom:8px;font:10px/1.2 monospace;color:rgba(255,255,255,0.25);pointer-events:none;user-select:none;z-index:1;">build 20260714-065936</div>
 </body>
 </html>
